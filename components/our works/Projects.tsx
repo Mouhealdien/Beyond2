@@ -21,9 +21,9 @@ const Projects = () => {
           <div
             key={i}
             style={{ marginTop: `${mt}` }}
-            className=" pb-5 sm:pb-1  max-w-[200px] sm:max-w-[300px] md:max-w-[260px] xl:max-w-[270px] h-[250px] sm:h-[400px]  "
+            className=" pb-5 sm:pb-1  max-w-[200px] sm:max-w-[300px] md:max-w-[260px] xl:max-w-[270px] h-[300px] sm:h-[400px]  "
           >
-            <div className=" rounded-xl h-[80%]   overflow-hidden  ">
+            <div className=" rounded-xl h-[80%] mb-2  overflow-hidden  ">
               <Image
                 style={{ transform: "scale(2.5)"  }}
                 className="rounded-t-lg   "
@@ -41,13 +41,13 @@ const Projects = () => {
               </h1>
               <Link
              
-                className="text-primary px-5 text-[14px] md:text-base"
+                className="text-primary px-10 text-[14px] md:text-base"
                 href={"#"}
               
               >    
                {t('show-full-project')}
               </Link>
-              <FaArrowRight className={` inline text-primary ${language=="ar"?"rotate-180":""}`}/>
+              <FaArrowRight className={` text-[14px] mx-2   inline text-primary ${language=="ar"?"rotate-180":""}`}/>
             </div>
           </div>
         );

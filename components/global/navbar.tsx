@@ -99,7 +99,7 @@ const Navbar = (props: propsType) => {
         <div
           className={`items-center justify-between ${open ? "" : "hidden"} w-full md:flex md:w-auto md:order-1" id="navbar-sticky`}
         >
-          <ul className="flex flex-col text-center p-4 md:p-0 mt-4 font-medium rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+          <ul className="flex flex-col gap-3 md:gap-0 text-center p-4 md:p-0 mt-4 font-medium rounded-lg bg-transparent md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
             {pages.map((page, index) => {
               return (
                 <li className="text-white" key={index}>

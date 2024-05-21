@@ -50,6 +50,7 @@ const NumbersSvg = () => {
         </svg>
 
         <svg
+        className="absolute left-0 top-1"
           width="110"
           height="62"
           viewBox="0 0 119 71"

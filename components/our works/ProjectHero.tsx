@@ -1,13 +1,9 @@
-import { Container } from '../../../components/global/Container'
-import Navbar from '../../../components/global/navbar'
 import React from 'react'
+import { Container } from '../global/Container'
+import Navbar from '../global/navbar'
 import Image from 'next/image'
-import heroImg from '../../../public/assets/projectHero.png'
-const page = () => {
-
-  const s={
-    backgroundImage: "linear-gradient(to bottom, #000000, #3b3b3b, #777777, #b9b9b9, #ffffff)"
-  }
+import heroImg from '../../public/assets/projectHero.png'
+const ProjectHero = () => {
   return (
     <div>
     <header className="relative h-[700px] xs:h-[800px]  overflow-hidden">
@@ -34,14 +30,6 @@ const page = () => {
       </div>
 
       <div  style={{backgroundColor:'rgba(20, 24, 98,0.5)'}} className=" absolute top-0 left-0 w-full   h-full z-10"></div>
-      {/* <div    className="  bg-transparent py-20 border border-black absolute top-[600px] left-0 w-full  h-[300px]   z-10">
-        <div
-        className='h-[100px]'
-        style={s}>
-
-        </div>
-      </div> */}
-
       <Image
         className="absolute   object-cover  -z-10 w-auto min-w-full min-h-full "
         style={{
@@ -49,13 +37,13 @@ const page = () => {
           " blur(10px) ",
         }}
         src={heroImg}
+        layout="fill"
         alt="hero"
         
       />
-
     </header>
     <div  
-    className='mt-[-150px] md:mt-[-100px] relative border border-black '
+    className='mt-[-150px] md:mt-[-100px] relative  '
     >
       <svg className='absolute w-full z-50' width="1728" height="344" viewBox="0 0 1728 344" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="1728" height="344" fill="url(#paint0_linear_1203_10007)"/>
@@ -73,4 +61,4 @@ const page = () => {
   )
 }
 
-export default page
+export default ProjectHero
