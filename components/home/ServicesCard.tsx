@@ -8,7 +8,7 @@ const ServicesCard = ({key}:propsType) => {
   return (
         <div          
             key={key}
-            className="flex-col flex gap-2   max-w-[200px]  md:max-w-[400px]  rounded-lg shadow-lg lg:basis-1/2  lg:max-w-[450px] bg-[#E9EAFF] px-4 py-2 "
+            className="flex-col flex gap-2   max-w-[400px]  rounded-lg shadow-lg lg:basis-1/2  lg:max-w-[450px] bg-[#E9EAFF] px-4 py-2 "
             >
             <div className=" bg-primary rounded-md w-fit px-4 py-4">
                 <FaLocationArrow className="text-2xl lg:text-3xl" color="#B3D4FF" />
