@@ -6,17 +6,17 @@ import heroImg from '../../../public/assets/projectHero.png'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ProjectHero from '../../../components/our works/ProjectHero'
 
-export async function getStaticPaths(id:string) {
-  return {
-    paths: [
-      // String variant:
-      '/our-works/[id]',
-      // Object variant:
-      { params: { id: 'second-post' } },
-    ],
-    fallback: true,
-  }
-}
+// export async function getStaticPaths(id:string) {
+//   return {
+//     paths: [
+//       // String variant:
+//       '/our-works/[id]',
+//       // Object variant:
+//       { params: { id: 'second-post' } },
+//     ],
+//     fallback: true,
+//   }
+// }
 
 export async function getStaticProps({ locale }) {
   return {
