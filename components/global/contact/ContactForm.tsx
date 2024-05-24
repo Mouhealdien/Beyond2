@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../Input";
 import { useTranslation } from "next-i18next";
-import { useSendEmailQuery } from "../../../lib/redux/services/api";
+import { useSendEmailMutation } from "../../../lib/redux/services/api";
 import { ContactFormData } from "../../../common/types/contact";
 const ContactForm = () => {
 
@@ -22,7 +22,7 @@ const ContactForm = () => {
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useSendEmailQuery(formData)
+    useSendEmailMutation(formData)
     
     setFullName("");
     setEmail("");
