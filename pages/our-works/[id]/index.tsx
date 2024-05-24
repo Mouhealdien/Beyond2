@@ -5,6 +5,7 @@ import Image from 'next/image'
 import heroImg from '../../../public/assets/projectHero.png'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ProjectHero from '../../../components/our works/ProjectHero'
+import { GetStaticPaths } from 'next/types'
 
 // export async function getStaticPaths(id:string) {
 //   return {
@@ -17,6 +18,14 @@ import ProjectHero from '../../../components/our works/ProjectHero'
 //     fallback: true,
 //   }
 // }
+
+export const getStaticPaths: GetStaticPaths<{ id: string }> = async () => {
+
+  return {
+      paths: [], //indicates that no page needs be created at build time
+      fallback: 'blocking' //indicates the type of fallback
+  }
+}
 
 export async function getStaticProps({ locale }) {
   return {
