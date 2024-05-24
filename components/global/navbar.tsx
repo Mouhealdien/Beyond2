@@ -43,12 +43,12 @@ const Navbar = (props: propsType) => {
       className={`  w-full top-0 start-0  ${props.customeStyle} z-40 `}
     >
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a
+        <Link
           href="/"
           className="flex items-center space-x-3  rtl:space-x-reverse"
         >
           <h1 className=" text-xl text-white font-extrabold">Beyond.</h1>
-        </a>
+        </Link>
         
         <div className="flex gap-2 md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
         <Link href={'#contact'}>
