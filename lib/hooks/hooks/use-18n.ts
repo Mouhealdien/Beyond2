@@ -17,6 +17,7 @@ export default function useI18n() {
 				document.dir = _dir(language);
 			}
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [language]);
 	return language;
 }
