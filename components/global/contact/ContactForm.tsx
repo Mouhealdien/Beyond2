@@ -9,12 +9,12 @@ const ContactForm = () => {
   const [email, setEmail] = useState("");
   const [requestType, setRequestType] = useState("");
   const [challenge, setChallenge] = useState("");
-
+  const [createMessage]=useSendEmailMutation()
   const { i18n, t } = useTranslation();
 
   const handleSubmit = (event) => {
     event.preventDefault(); 
-    const formData:ContactFormData={
+    const formData={
       name: fullName,
       email: email,
       requestType: requestType,
@@ -22,7 +22,7 @@ const ContactForm = () => {
     }
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    useSendEmailMutation(formData)
+    createMessage(formData)
     
     setFullName("");
     setEmail("");

@@ -20,11 +20,11 @@ export const Api = createApi({
         query: () => `/admin/services`,
       }),
 
-    sendEmail: builder.mutation<ContactFormData,{formData: ContactFormData;}>({
-			query: (requestBody) => ({
+    sendEmail: builder.mutation<ContactFormData,Partial<ContactFormData>>({
+			query: (formData) => ({
 				url: '/contact-us',
 				method: 'POST',
-				body: JSON.stringify(requestBody),
+				body: JSON.stringify(formData),
 				headers: {
 					'Content-Type': 'application/json',
 				},
