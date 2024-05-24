@@ -42,7 +42,7 @@ const Projects = () => {
               <Link
              
                 className="text-primary px-10 text-[10px] md:text-base"
-                href={"#"}
+                href={"our-works/id"}
               
               >    
                {t('show-full-project')}
