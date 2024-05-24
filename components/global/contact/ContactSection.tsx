@@ -11,7 +11,7 @@ const ContactSection = () => {
   
   return (
     <div className=" bg-white pt-10 md:py-20" id="contact">
-      <div className=" lg:max-w-[1100px]  xl:w-[1423px] m-auto  flex flex-row py-2 justify-center lg:justify-start ">
+      <div className="  lg:max-w-[1100px]  xl:w-[1423px] m-auto  flex flex-row py-2 justify-center lg:justify-start ">
         <div className=" hidden lg:block w-[150px] relative z-10 ">
           <svg
             className={`absolute  ${language=="ar"?" rotate-1 -scale-x-100 right-10 xl:-right-28 left-40 ":" left-10 xl:-left-28 right-40 "}   xl:h-[600px] lg:w-[950px] xl:w-[1290px] top-0 bottom-0`}
@@ -24,7 +24,7 @@ const ContactSection = () => {
               fill="#202EFF"
             />
           </svg>
-          <h1 className={` absolute  text-white lg:text-5xl xl:text-6xl w-[21rem] -rotate-90 top-52 xl:top-48 ${language=="en"?"-left-16":"-right-20"}  `}>
+          <h1 className={` absolute  text-white lg:text-5xl xl:text-6xl w-[21rem] -rotate-90  lg:top-36 xl:top-48 ${language=="en"?"-left-16 lg:top-36":"-right-20 lg:top-56"}  `}>
             {t('contact-us')}
           </h1>
           <div className={` ${ language=="en"?"top-40 xl:top-48 right-5 lg:left-[39rem] xl:left-[40rem]":"top-40 xl:top-48 left-5 lg:right-[39rem] xl:right-[40rem]"} absolute  `}>
@@ -33,12 +33,12 @@ const ContactSection = () => {
           <EyeSvg />
         </div>
         <div className={`hidden sm:block lg:hidden w-[150px] h-[500px] relative bg-primary ${language=="en"?"rounded-tl-[6rem] rounded-bl-[6rem]":"rounded-tr-[6rem] rounded-br-[6rem]"} `}>
-          <h1 className=" absolute  text-white text-6xl w-80 -rotate-90 top-52 -left-20 ">
+          <h1 className=" absolute  text-white text-6xl w-[21rem] -rotate-90 top-52 -left-20 ">
             {t('contact-us')}
           </h1>
         </div>
 
-        <div className="bg-[#F3F3F3] shadow-inner h-[800px] lg:h-[550px] z-20 ">
+        <div className="bg-[#F3F3F3]  px-3 py-3 shadow-inner pb-5 h-fit z-20 ">
           <FooterAndContactLogo />
           <p className={`text-[#5D5E5E]"  py-2 px-5 `}>
             Feel free to write meassage to us

@@ -1,13 +1,22 @@
 import React from "react";
-type propsType = {
+
+type PropsType = {
   placeholder: string;
+  type: string;
+  value: string; 
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void; 
 };
-const Input = ({ placeholder }: propsType) => {
+
+const Input: React.FC<PropsType> = ({ placeholder, type, value, onChange }) => {
   return (
     <input
       className="w-[300px] sm:w-[400px] py-2 px-1"
       placeholder={placeholder}
-    ></input>
+      type={type}
+      value={value} 
+      onChange={onChange} 
+      required
+    />
   );
 };
 

@@ -19,6 +19,14 @@
     "our-clients": "عملائنا",
     "With Who We Were Work": "مع من نحن نعمل",
     "show-more": "رؤية المزيد",
-    "show-less": "رؤية أقل"
+    "show-less": "رؤية أقل",
+    "full-name": "الاسم الكامل",
+    "email": "البريد الالكتروني",
+    "select-request-type": "حدد نوع الطلب",
+    "what-is-your-challenge": "ما هو التحدي الخاص بك",
+    "Send": "ارسال",
+    "general question": "سؤال عام",
+    "graphic design": "التصميم الجرافيكي",
+    "marketing": "تسويق"
 
 }

@@ -11,7 +11,8 @@ import OurWorksSection from "../components/our works/OurWorksSection";
 import OurServicesSection from "../components/home/OurServicesSection";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from "next-i18next";
-
+import { useGetHomeQuery } from "../lib/redux/services/api";
+import { useGetPokemonByNameQuery } from "../lib/redux/services/pokemon";
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -25,13 +26,10 @@ export default function Home() {
   const { t ,i18n } = useTranslation('common');
   const arabic = 'ar';
 	const English = 'en';
+  const { data, error, isLoading } = useGetHomeQuery()
+ 
 
-  const handleLanguageChange = () => {
-		const nextLocale = i18n.language === arabic ? English : arabic;
-    console.log(nextLocale)
-		i18n.changeLanguage(nextLocale);
-
-	};
+  console.log(data)
   return (
     <div>
   

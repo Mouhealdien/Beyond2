@@ -13,7 +13,7 @@ const Projects = () => {
 	const language = i18n.language === 'en' ? 'en' : 'ar';
 
   return (
-    <div className="flex flex-row  gap-5  justify-center xl:justify-end flex-wrap ">
+    <div className="flex flex-row  xxs:gap-5  justify-center xl:justify-end flex-wrap ">
       {arr.map((e, i) => {
         let mt = istab ? `${(i % 3) + 1}rem` : `${(i % 2) + 1}rem`;
 
@@ -21,9 +21,9 @@ const Projects = () => {
           <div
             key={i}
             style={{ marginTop: `${mt}` }}
-            className=" pb-5 sm:pb-1  max-w-[200px] sm:max-w-[300px] md:max-w-[260px] xl:max-w-[270px] h-[300px] sm:h-[400px]  "
+            className=" pb-5 sm:pb-1   max-w-[200px] sm:max-w-[300px] md:max-w-[260px] xl:max-w-[270px] h-[300px] sm:h-[400px]  "
           >
-            <div className=" rounded-xl h-[80%] mb-2  overflow-hidden  ">
+            <div className=" rounded-xl h-[70%] xxs:h-[80%] mb-2  overflow-hidden  ">
               <Image
                 style={{ transform: "scale(2.5)"  }}
                 className="rounded-t-lg   "
@@ -36,18 +36,18 @@ const Projects = () => {
               />
             </div>
             <div className="  text-primary ">
-              <h1 className="text-base text-black md:text-[18px]  lg:text-[24px]   font-bold">
+              <h1 className="text-lg  text-black md:text-[18px]  lg:text-[24px]   font-bold">
                 Brand awareness
               </h1>
               <Link
              
-                className="text-primary px-10 text-[14px] md:text-base"
+                className="text-primary px-10 text-[10px] md:text-base"
                 href={"#"}
               
               >    
                {t('show-full-project')}
               </Link>
-              <FaArrowRight className={` text-[14px] mx-2   inline text-primary ${language=="ar"?"rotate-180":""}`}/>
+              <FaArrowRight className={` text-[12px] mx-2   inline text-primary ${language=="ar"?"rotate-180":""}`}/>
             </div>
           </div>
         );

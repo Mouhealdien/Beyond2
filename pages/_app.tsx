@@ -3,6 +3,8 @@ import useI18n from '../lib/hooks/hooks/use-18n';
 import '../styles/globals.css'
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
+import { Provider } from 'react-redux';
+import { store } from '../lib/redux/store';
 
 
 function MyApp({ Component, pageProps }) {
@@ -10,6 +12,7 @@ function MyApp({ Component, pageProps }) {
 	const { locale } = useRouter();
   return (
   // <html dir={`${locale == 'ar' ? 'rtl' : 'ltr'}`}>
+  <Provider store={store}>
     <div style={{
       fontFamily:
         language === 'ar'
@@ -19,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       <Component  {...pageProps} />
     </div>
     
-    
+    </Provider>
   // </html>
 
   )
