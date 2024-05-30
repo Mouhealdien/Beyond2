@@ -42,7 +42,7 @@ const ContactForm = () => {
     },
   });
 
-  const questionRegardingOptions: OptionType[] = [
+  const questionRegardingOptions = [
     { value: "socialMediaManagement", label: t("socialMediaManagement") },
     {
       value: "marketingStrategyDevelopment",
@@ -52,14 +52,14 @@ const ContactForm = () => {
     { value: "designAndProduction", label: t("designAndProduction") },
   ];
 
-  const hearUsOptions: OptionType[] = [
+  const hearUsOptions = [
     { value: "searchEngines", label: t("searchEngines") },
     { value: "socialMedia", label: t("socialMedia") },
     { value: "referrals", label: t("referrals") },
     { value: "advertising", label: t("advertising") },
   ];
 
-  const timeOptions: OptionType[] = [
+  const timeOptions = [
     { value: "morning", label: t("morning") },
     { value: "afternoon", label: t("afternoon") },
     { value: "evening", label: t("evening") },
