@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React, { ReactElement } from "react";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 type propsType = {
@@ -14,15 +14,15 @@ const SocialMedia = ({ customeStyle }: propsType) => {
   const social = [
     {
       icon: <FaFacebook color="white" />,
-      url: "#",
+      url: "https://www.facebook.com/beyond4m.iq"
     },
     {
       icon: <FaInstagram color="white" />,
-      url: "#",
+      url: "https://www.instagram.com/beyond4m.iq/?utm_source=ig_web_button_share_sheet",
     },
     {
-      icon: <FaXTwitter color="white" />,
-      url: "#",
+      icon: <FaLinkedin color="white" />,
+      url: "https://iq.linkedin.com/company/beyond4"
     },
   ];
   return (

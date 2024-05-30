@@ -10,7 +10,7 @@ const HomeHero = () => {
   const { i18n, t } = useTranslation();
 	const language = i18n.language === 'en' ? 'en' : 'ar';
   return (
-    <header className="relative h-[700px] xs:h-[800px]  overflow-hidden">
+    <header className="relative h-[800px]   overflow-hidden">
       <Container>
         <div className="relative w-full   bg-transparent">
           {" "}
@@ -23,7 +23,7 @@ const HomeHero = () => {
       </Container>
       <SocialMedia customeStyle="top-52  xl:px-[120px]" />
       <div className="   ">
-        <div className="flex flex-col   absolute bg-transparent w-full top-60  xs:top-80 text-center   z-50    ">
+        <div className="flex flex-col    absolute bg-transparent w-full top-[20.5rem] md:top-80 text-center   z-50    ">
           <h1 className="text-xl xs:text-2xl md:text-4xl m-auto w-full md:w-[800px] lg:w-full  px-20 text-white">
             Unleashing Potential, Creating Impact with
           </h1>

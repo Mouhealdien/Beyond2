@@ -3,77 +3,258 @@ import Input from "../Input";
 import { useTranslation } from "next-i18next";
 import { useSendEmailMutation } from "../../../lib/redux/services/api";
 import { ContactFormData } from "../../../common/types/contact";
-const ContactForm = () => {
+import { Controller, useForm } from "react-hook-form";
+import Select from "react-select";
 
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [requestType, setRequestType] = useState("");
-  const [challenge, setChallenge] = useState("");
-  const [createMessage]=useSendEmailMutation()
+interface OptionType {
+  value: string;
+  label: string;
+}
+const ContactForm = () => {
   const { i18n, t } = useTranslation();
 
-  const handleSubmit = (event) => {
-    event.preventDefault(); 
-    const formData={
-      name: fullName,
-      email: email,
-      requestType: requestType,
-      message: challenge,
-    }
+  const selectStyle = {
+    placeholder: (provided) => ({
+      ...provided,
+      color: "#9ca3af",
+      fontSize: "14px",
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      fontSize: "14px",
+    }),
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      fontSize: "14px",
+      paddingTop: "4px",
+      borderRadius: "6px",
+      border: "none",
+      paddingBottom: "4px",
+    }),
+  };
 
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    createMessage(formData)
-    
-    setFullName("");
-    setEmail("");
-    setRequestType(""); 
-    setChallenge("");
+  const selectTheme = (theme) => ({
+    ...theme,
+    borderRadius: 0,
+    colors: {
+      ...theme.colors,
+      primary: "#202EFF",
+    },
+  });
+
+  const questionRegardingOptions: OptionType[] = [
+    { value: "socialMediaManagement", label: t("socialMediaManagement") },
+    {
+      value: "marketingStrategyDevelopment",
+      label: t("marketingStrategyDevelopment"),
+    },
+    { value: "nalyticsAndEvaluation", label: t("analyticsAndEvaluation") },
+    { value: "designAndProduction", label: t("designAndProduction") },
+  ];
+
+  const hearUsOptions: OptionType[] = [
+    { value: "searchEngines", label: t("searchEngines") },
+    { value: "socialMedia", label: t("socialMedia") },
+    { value: "referrals", label: t("referrals") },
+    { value: "advertising", label: t("advertising") },
+  ];
+
+  const timeOptions: OptionType[] = [
+    { value: "morning", label: t("morning") },
+    { value: "afternoon", label: t("afternoon") },
+    { value: "evening", label: t("evening") },
+  ];
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    watch,
+    reset,
+  } = useForm<ContactFormData>({
+    defaultValues: {
+      name: undefined,
+      email: undefined,
+      mobileNumber: undefined,
+      questionRegarding: undefined,
+    },
+  });
+
+  const onSubmit = async (data) => {
+    console.log(data);
+
+    // await toast.promise(updateService({ formData: data }).unwrap(), {
+    // 	error: t('could-not-update'),
+    // 	pending: t('trying-to-update'),
+    // 	success: t('updated-successfully') as string,
+    // });
   };
 
   return (
     <form
       className="flex flex-col justify-center items-center gap-5 px-5"
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
     >
-      <Input
-        type="text"
-        placeholder={t("full-name")}
-        value={fullName}
-        onChange={(e) => setFullName(e.target.value)}
-      />
-      <Input
-        type="email"
-        placeholder={t("email")}
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <select
-        required
-        className="w-[300px]   sm:w-[400px] py-2 px-1"
-        value={requestType}
-        onChange={(e) => setRequestType(e.target.value)}
+      <div className="basis-1/2">
+        <Controller
+          name="name"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <Input
+              inputProps={{
+                ...field,
+                id: "name",
+                name: "name",
+                type: "text",
+                placeholder: "name ",
+              }}
+              label={t("name") + "*"}
+            />
+          )}
+        />
+        {errors.name && (
+          <p className="text-xs mb-3 text-red-700">
+            {t("name") + " " + t("requried")}
+          </p>
+        )}
+        <Controller
+          name="email"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <Input
+              inputProps={{
+                ...field,
+                id: "email",
+                name: "email",
+                type: "text",
+                placeholder: "email ",
+              }}
+              label={t("email") + "*"}
+            />
+          )}
+        />
+        {errors.email && (
+          <p className="text-xs mb-3 text-red-700">
+            {t("email") + " " + t("requried")}
+          </p>
+        )}
+        <Controller
+          name="mobileNumber"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <Input
+              inputProps={{
+                ...field,
+                id: "mobileNumber",
+                name: "mobileNumber",
+                type: "text",
+                placeholder: "Mobile Number ",
+              }}
+              label={t("mobileNumber") + "*"}
+            />
+          )}
+        />
+        {errors.mobileNumber && (
+          <p className="text-xs mb-3 text-red-700">
+            {t("mobileNumber") + " " + t("requried")}
+          </p>
+        )}
+
+        <Controller
+          name="jobTitle"
+          control={control}
+          render={({ field }) => (
+            <Input
+              inputProps={{
+                ...field,
+                id: "jobTitle",
+                name: "jobTitle",
+                type: "text",
+                placeholder: "jobTitle ",
+              }}
+              label={t("jobTitle")}
+            />
+          )}
+        />
+
+        <Controller
+          name="Institution"
+          control={control}
+          rules={{ required: true }}
+          render={({ field }) => (
+            <Input
+              inputProps={{
+                ...field,
+                id: "Institution",
+                name: "Institution",
+                type: "text",
+                placeholder: "Institution ",
+              }}
+              label={t("institution")}
+            />
+          )}
+        />
+
+        <Controller
+          name="questionRegarding"
+          control={control}
+          render={({ field }) => (
+            <Select
+              className="my-4 border-gray-200 shadow"
+              components={{
+                IndicatorSeparator: () => null,
+              }}
+              styles={selectStyle}
+              theme={selectTheme}
+              placeholder={t("questionRegarding")}
+              {...field}
+              options={questionRegardingOptions}
+            />
+          )}
+        />
+        <Controller
+          name="hearUs"
+          control={control}
+          render={({ field }) => (
+            <Select
+              components={{
+                IndicatorSeparator: () => null,
+              }}
+              styles={selectStyle}
+              theme={selectTheme}
+              className="my-4 border-gray-200 shadow"
+              placeholder={t("hearUs")}
+              {...field}
+              options={hearUsOptions}
+            />
+          )}
+        />
+        <Controller
+          name="time"
+          control={control}
+          render={({ field }) => (
+            <Select
+              components={{
+                IndicatorSeparator: () => null,
+              }}
+              styles={selectStyle}
+              theme={selectTheme}
+              className="my-4 border-gray-200  shadow "
+              placeholder={t("contactTime")}
+              {...field}
+              options={timeOptions}
+            />
+          )}
+        />
+      </div>
+
+      <button
+        type="submit"
+        className="bg-primary w-[300px] sm:w-[400px] text-white py-2 rounded-full"
       >
-        
-        <option value=""  disabled selected hidden>
-       {t('select-request-type')}
-        </option>
-        <option value="general question">{t("general question")}</option>
-        <option value="marketing" className="hover:bg-primary">
-          {t("marketing")}
-        </option>
-        
-        <option value="graphic design">{t("graphic design")}</option>
-        
-      </select>
-      <textarea
-        required
-        rows={5}
-        placeholder={t("what-is-your-challenge")}
-        value={challenge}
-        onChange={(e) => setChallenge(e.target.value)}
-        className="w-[300px] sm:w-[400px] py-2 px-1"
-      />
-      <button type="submit" className="bg-primary w-[300px] sm:w-[400px] text-white py-2 rounded-full">
         {t("Send")}
       </button>
     </form>

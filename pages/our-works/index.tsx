@@ -33,7 +33,7 @@ const page = () => {
   );
   return (
     <div className="bg-primary">
-      <Navbar/>
+     
       <Container customeStyle="bg-primary">
         <Hero svg={HeroSvg} title={"What we did at Beyond"} />
       </Container>

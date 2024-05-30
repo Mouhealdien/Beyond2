@@ -25,9 +25,12 @@ export const Api = createApi({
 				url: '/contact-us',
 				method: 'POST',
 				body: JSON.stringify(formData),
-				headers: {
-					'Content-Type': 'application/json',
-				},
+				 headers: {
+				  	'Content-Type': 'application/json',
+          // 'Access-Control-Allow-Headers':'Content-Type, X-Requested-With',
+          // 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE',
+          //  'Access-Control-Allow-Origin':'*'
+				  },
 			}),
 		}),
 

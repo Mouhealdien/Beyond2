@@ -35,7 +35,7 @@ const page = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7];
   return (
     <div className="bg-primary" >
-      <Navbar />
+     
       <Container customeStyle="bg-primary">
         <Hero svg={HeroSvg} title={"What Services We Offer at Beyond"} />
       </Container>

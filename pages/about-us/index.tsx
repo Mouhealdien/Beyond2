@@ -55,7 +55,7 @@ const index = () => {
   );
   return (
     <div className="bg-primary ">
-      <Navbar/>
+      
       <Container customeStyle="bg-primary">
         <Hero svg={HeroSvg} title={"Let’s tell you about our agency"} />
       </Container>

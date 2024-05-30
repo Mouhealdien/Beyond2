@@ -48,7 +48,7 @@ export default function Home() {
 
       <Testimonials />
 
-      <Achievements />
+      {/* <Achievements /> */}
       <ContactSection />
 
       <Footer />

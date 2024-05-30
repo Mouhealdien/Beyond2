@@ -4,6 +4,7 @@ import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import SocialMedia from "./SocialMedia";
 import { useTranslation } from "next-i18next";
+import Navbar from "./navbar";
 
 type props = {
   svg: ReactElement;
@@ -15,10 +16,12 @@ const Hero = ({ svg, title }: props) => {
   const { i18n, t } = useTranslation();
 	const language = i18n.language === 'en' ? 'en' : 'ar';
   return (
-    <div className=" relative bg-primary  h-[700px]">
+    <div className=" relative bg-primary  h-[800px]">
+      <Navbar/>
       <SocialMedia customeStyle="top-28 md:top-52" />
       <div className={`border-l-gray-200 absolute top-[350px] ${language=="en"?"right-0":"left-0"} md:top-[500px] right-0  border-l h-20  `} />
-      <div className="absolute top-[500px] md:top-[600px] right-7 ">
+      <div className="absolute m-auto top-[400px] left-10 right-10">
+        <div className="  absolute top-60">
         <svg
           className=" absolute top-4 left-4"
           width="47"
@@ -45,11 +48,14 @@ const Hero = ({ svg, title }: props) => {
             fill="#C7C8D5"
           />
         </svg>
-      </div>
-      {svg}
-      <p className=" text-center text-white text-[25px] px-12 md:text-[45px]  pt-[350px]">
+        </div>
+        
+        <p className=" text-center  text-white text-xl xxs:text-[25px] px-2 sm:px-8 md:px-12  sm:leading-none  sm:text-[45px]  ">
         {title}
       </p>
+      </div>
+      {svg}
+     
     </div>
   );
 };

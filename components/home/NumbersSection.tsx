@@ -23,7 +23,7 @@ const NumbersSection = () => {
       </svg>
 
       <Container>
-        <div className="z-20 w-full h-[600px]  xl:h-[650px]   bg-primary">
+        <div className="z-20 w-full h-[700px]  xl:h-[650px]   bg-primary">
           <div className="  flex flex-row gap-5 md:gap-1 justify-center items-center flex-wrap md:flex-nowrap   ">
             <h1 className="text-white z-20  xl:w-[500px]  font-bold w-fit text-4xl sm:text-5xl lg:text-6xl">
               We Make A Big Numbers
@@ -39,7 +39,7 @@ const NumbersSection = () => {
 
               <div className="  flex flex-col gap-5 mt-16">
                 <NumbersCard text1="+100" text2="Projects" />
-                <NumbersCard text1="+50K$" text2="Marketing spending" />
+                <NumbersCard text1="+50K$" text2="Marketing Spend for a single client in 30 days" />
               </div>
 
               <svg

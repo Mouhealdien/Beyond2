@@ -27,7 +27,6 @@ useEffect(()=>{
     <Container>
       <div className="text-center py-5">
         <h2 className="text-4xl md:text-6xl font-bold">{t('our-clients')}</h2>
-        <h3 className=" text-xl md:text-2xl">{t('With Who We Were Work')}</h3>
       </div>
       <div className="flex flex-row flex-wrap items-center justify-center">
         {arr.map((e, i) => {
