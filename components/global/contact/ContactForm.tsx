@@ -15,7 +15,7 @@ interface OptionType {
 }
 const ContactForm = () => {
   const { i18n, t } = useTranslation();
-  const recaptcha = useRef();
+  const recaptcha = useRef<ReCAPTCHA | null>(null);
   const selectStyle = {
     placeholder: (provided) => ({
       ...provided,
