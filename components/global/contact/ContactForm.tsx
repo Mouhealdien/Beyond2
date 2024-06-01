@@ -81,8 +81,7 @@ const ContactForm = () => {
     defaultValues: {
       name: undefined,
       email: undefined,
-      mobileNumber: undefined,
-      questionRegarding: undefined,
+      phoneNumber: undefined,
     },
   });
 
@@ -91,7 +90,12 @@ const ContactForm = () => {
     if (token) {
       console.log("Captcha checked");
       toast.success("we will reply you soon");
-      console.log(data);
+      console.log({
+        ...data,
+        requestType: data.requestType.value,
+        HowDidYouHearAboutUs: data.HowDidYouHearAboutUs.value,
+        bestTime: data.bestTime.value,
+      });
     } else {
       toast.error("please check the reCaptcha");
     }
@@ -156,7 +160,7 @@ const ContactForm = () => {
             </p>
           )}
           <Controller
-            name="mobileNumber"
+            name="phoneNumber"
             control={control}
             rules={{ required: true }}
             render={({ field }) => (
@@ -172,7 +176,7 @@ const ContactForm = () => {
               />
             )}
           />
-          {errors.mobileNumber && (
+          {errors.phoneNumber && (
             <p className="text-xs mb-3 text-red-700">
               {t("mobileNumber") + " " + t("requried")}
             </p>
@@ -196,14 +200,14 @@ const ContactForm = () => {
           />
 
           <Controller
-            name="Institution"
+            name="institution"
             control={control}
             render={({ field }) => (
               <Input
                 inputProps={{
                   ...field,
-                  id: "Institution",
-                  name: "Institution",
+                  id: "institution",
+                  name: "institution",
                   type: "text",
                   placeholder: "Institution ",
                 }}
@@ -213,24 +217,26 @@ const ContactForm = () => {
           />
 
           <Controller
-            name="questionRegarding"
+            name="requestType"
             control={control}
-            render={({ field }) => (
-              <Select
-                className="my-4 border-gray-200 shadow"
-                components={{
-                  IndicatorSeparator: () => null,
-                }}
-                styles={selectStyle}
-                theme={selectTheme}
-                placeholder={t("questionRegarding")}
-                {...field}
-                options={questionRegardingOptions}
-              />
-            )}
+            render={({ field }) => {
+              return (
+                <Select
+                  className="my-4 border-gray-200 shadow"
+                  components={{
+                    IndicatorSeparator: () => null,
+                  }}
+                  styles={selectStyle}
+                  theme={selectTheme}
+                  placeholder={t("questionRegarding")}
+                  {...field}
+                  options={questionRegardingOptions}
+                />
+              );
+            }}
           />
           <Controller
-            name="hearUs"
+            name="HowDidYouHearAboutUs"
             control={control}
             render={({ field }) => (
               <Select
@@ -247,7 +253,7 @@ const ContactForm = () => {
             )}
           />
           <Controller
-            name="time"
+            name="bestTime"
             control={control}
             render={({ field }) => (
               <Select

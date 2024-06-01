@@ -1,10 +1,10 @@
 export type ContactFormData= {
     name: string;
     email: string;
-    mobileNumber:string;
+    phoneNumber:string;
     jobTitle:string;
-    Institution:string;
-    questionRegarding:string;
-    hearUs:string;
-    time:string
+    institution:string;
+    requestType:string;
+    HowDidYouHearAboutUs:string;
+    bestTime:string
   }
