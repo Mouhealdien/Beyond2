@@ -3,9 +3,9 @@ import { Container } from "../global/Container";
 import QutationSvg from "./QutationSvg";
 import { useTranslation } from "next-i18next";
 
-const MiddelHeroSection = () => {
+const MiddelHeroSection = ({ title }) => {
   const { i18n, t } = useTranslation();
-	const language = i18n.language === 'en' ? 'en' : 'ar';
+  const language = i18n.language === "en" ? "en" : "ar";
   return (
     <div className="bg-primary">
       <Container>
@@ -24,12 +24,13 @@ const MiddelHeroSection = () => {
           </svg>
 
           <div className="pt-[150px]  md:pt-[100px]">
-            <QutationSvg customeStyle="text-start  pt-[20px]" />
-            <p className=" inline-block text-center text-white text-[20px] xs:text-[25px] sm:text-[30px] md:text-[40px]  lg:text-[50px]  ">
-              We promise to be your dedicated strategic partner in the digital
-              marketing world
+            <QutationSvg customeStyle="text-start xl:px-[40px]  pt-[20px]" />
+            <p className=" inline-block text-center m-auto text-white text-[20px] xs:text-[25px] sm:text-[30px] md:text-[40px]  lg:text-[50px]   ">
+              {title?.[language]}
             </p>
-            <QutationSvg customeStyle={`${language=='en'?"float-right":"float-left"}`} />
+            <QutationSvg
+              customeStyle={`  ${language == "en" ? "float-right" : "float-left mt-[0px] xl:mt-[30px]"} `}
+            />
           </div>
         </div>
       </Container>

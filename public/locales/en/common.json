@@ -8,12 +8,12 @@
     "Follow-us": "Follow Us",
     "side-of-our-works": "Side Of Our Works",
     "contact-information": "Contact Information",
-    "Case Studies": "Case Studies",
-    "Strategy Planning": "Strategy Planning",
-    "Social Media": "Social Media",
-    "Brand Development": "Brand Development",
-    "Content Marketing": "Content Marketing",
-    "Analytics": "Analytics",
+    "case_studies": "Case Studies",
+    "strategy_planning": "Strategy Planning",
+    "social_media": "Social Media",
+    "brand_development": "Brand Development",
+    "content_marketing": "Content Marketing",
+    "analytics": "Analytics",
     "show-full-project": "Show Full Project",
     "lang": "ar",
     "our-clients": "Our Clients",
@@ -47,7 +47,11 @@
     "morning": "Morning (9 AM to 12 PM)",
     "afternoon": "Afternoon (12 PM to 3 PM)",
     "evening": "Evening (3 PM to 6 PM)",
-    "requried": "is Requried"
+    "requried": "is Requried",
+    "services-title": "What Services We Offer at Beyond",
+    "about-title": "Let’s tell you about our agency",
+    "works-title": "What we did at Beyond",
+    "evaluation-title": "Get Free Evaluation Service"
 
 
 }

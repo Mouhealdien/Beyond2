@@ -54,7 +54,7 @@ const ContactForm = () => {
       value: "marketingStrategyDevelopment",
       label: t("marketingStrategyDevelopment"),
     },
-    { value: "nalyticsAndEvaluation", label: t("analyticsAndEvaluation") },
+    { value: "analyticsAndEvaluation", label: t("analyticsAndEvaluation") },
     { value: "designAndProduction", label: t("designAndProduction") },
   ];
 

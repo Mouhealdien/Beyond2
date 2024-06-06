@@ -5,6 +5,14 @@ const nextConfig = {
     swcMinify: true,
     reactStrictMode: true,
     i18n,
+    images: {
+        remotePatterns: [{
+            protocol: 'http',
+            hostname: '127.0.0.1',
+            // port: '',
+            // pathname: '/account123/**',
+        }, ],
+    },
 
 }
 

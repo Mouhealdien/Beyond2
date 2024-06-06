@@ -3,34 +3,38 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
 import { IoLocationOutline } from "react-icons/io5";
 import { useTranslation } from "next-i18next";
+import { useGetSharedQuery } from "../../../lib/redux/services/api";
 type propsType = {
   customeStyle?: string;
 };
 const ContactInfo = ({ customeStyle }: propsType) => {
-  const { t ,i18n } = useTranslation('common');
-  
+  const { t, i18n } = useTranslation("common");
+  const language = i18n.language === "en" ? "en" : "ar";
+  const { data: shared } = useGetSharedQuery();
+  const sharedData = shared?.data?.shared;
+
   const data = [
     {
       icon: (
         <MdOutlineMailOutline className="w-8 h-8 m-auto pt-2 text-[#FE5400] " />
       ),
-      text: "contact@beyond.com",
+      text: sharedData?.email,
     },
     {
       icon: <FiPhone className="w-8 h-8 m-auto pt-2 text-[#FE5400] " />,
-      text: "+4567 123 770 964",
+      text: sharedData?.phone,
     },
     {
       icon: (
         <IoLocationOutline className="w-8 h-8 m-auto pt-2 text-[#FE5400] " />
       ),
-      text: "Baghdad, Al-Mansour, opposite Baghdad Tower, Iraq",
+      text: sharedData?.address?.[language],
     },
   ];
 
   return (
     <div className={`${customeStyle}  flex flex-col gap-2`}>
-      <h1 className="    text-2xl w-60   pb-3 ">{t('contact-information')}</h1>
+      <h1 className="    text-2xl w-60   pb-3 ">{t("contact-information")}</h1>
       {data.map((e, i) => {
         return (
           <div key={i} className="flex flex-row gap-2  w-fit items-center ">

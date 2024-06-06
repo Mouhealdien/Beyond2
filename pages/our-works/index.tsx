@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Container } from "../../components/global/Container";
 import Footer from "../../components/global/Footer";
 import ContactSection from "../../components/global/contact/ContactSection";
@@ -8,11 +9,13 @@ import React, { useState } from "react";
 import OurWorksSection from "../../components/our works/OurWorksSection";
 import Navbar from "../../components/global/navbar";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { useGetProjectsQuery } from "../../lib/redux/services/api";
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ["common"])),
     },
   };
 }
@@ -31,13 +34,20 @@ const page = () => {
       />
     </svg>
   );
+
+  const { i18n, t } = useTranslation();
+  const language = i18n.language === "en" ? "en" : "ar";
+
   return (
     <div className="bg-primary">
-     
       <Container customeStyle="bg-primary">
-        <Hero svg={HeroSvg} title={"What we did at Beyond"} />
+        <Hero svg={HeroSvg} title={t("works-title")} />
       </Container>
-      <OurWorksSection customeContainerStyle="bg-white" customHeaderStyle="text-3xl  text-[#444545]  pt-10" />
+      <OurWorksSection
+        isHome={false}
+        customeContainerStyle="bg-white"
+        customHeaderStyle="text-3xl  text-[#444545]  pt-10"
+      />
       <ContactSection />
 
       <Footer />

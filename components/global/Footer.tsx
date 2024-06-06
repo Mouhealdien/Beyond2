@@ -7,10 +7,11 @@ import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { useTranslation } from "next-i18next";
 import AchievementCard from "../home/AchievementCard";
+import SocialMedia from "./SocialMedia";
+import SocialLinks from "./SocialLinks";
 const Footer = () => {
-  
   const { i18n, t } = useTranslation();
-	const language = i18n.language === 'en' ? 'en' : 'ar';
+  const language = i18n.language === "en" ? "en" : "ar";
   const pages = [
     {
       title: t("home"),
@@ -30,8 +31,6 @@ const Footer = () => {
     },
   ];
 
-  
-
   const social = [
     {
       icon: <FaFacebook color="white" />,
@@ -47,21 +46,24 @@ const Footer = () => {
     },
   ];
 
-
   return (
     <div className="bg-[#1B1C1C] h-fit ">
       <div className="flex flex-row flex-wrap ">
-        <Image width={1000} height={500}  src={aboutImage} className={`${language=="en"?"":" rotate-1 -scale-x-100"}`} alt="aboutImage" />
+        <Image
+          width={1000}
+          height={500}
+          src={aboutImage}
+          className={`${language == "en" ? "" : " rotate-1 -scale-x-100"}`}
+          alt="aboutImage"
+        />
         <div className="flex gap-5 flex-col pt-10 px-2">
           <FotterAndContactLogo />
-          <AchievementCard/>
-          <div className="flex justify-between gap-10 flex-row">
-          
-            <ul className=" font-light text-sm">
-            
+          <AchievementCard />
+          <div className="flex  gap-10 flex-row">
+            <ul className=" font-light flex flex-col gap-4 text-sm">
               {pages.map((page, index) => {
                 return (
-                  <li className="pb-5 text-white" key={index}>
+                  <li className=" text-white" key={index}>
                     <Link
                       href={page.url}
                       className="block  px-3 text-white  md:p-0 "
@@ -73,15 +75,16 @@ const Footer = () => {
                 );
               })}
             </ul>
-
-          
+            <div className="flex-row flex gap-4 items-start">
+              <p className=" text-white text-sm inline  ">{t("Follow-us")}</p>
+              <SocialLinks customeStyle={"flex-row"} />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="flex flex-row w-full justify-center py-3 px-24 text-white">
         <p> Designed by Beyond Agency © All rights reserved 2024</p>
-        
       </div>
     </div>
   );

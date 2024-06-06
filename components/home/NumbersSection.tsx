@@ -4,10 +4,9 @@ import NumbersSvg from "./NumbersSvg";
 import NumbersCard from "./NumbersCard";
 import { useTranslation } from "next-i18next";
 
-const NumbersSection = () => {
-
+const NumbersSection = ({ title, statistics }) => {
   const { i18n, t } = useTranslation();
-	const language = i18n.language === 'en' ? 'en' : 'ar';
+  const language = i18n.language === "en" ? "en" : "ar";
   return (
     <div className=" relative bg-primary ">
       <svg
@@ -26,24 +25,36 @@ const NumbersSection = () => {
         <div className="z-20 w-full h-[700px]  xl:h-[650px]   bg-primary">
           <div className="  flex flex-row gap-5 md:gap-1 justify-center items-center flex-wrap md:flex-nowrap   ">
             <h1 className="text-white z-20  xl:w-[500px]  font-bold w-fit text-4xl sm:text-5xl lg:text-6xl">
-              We Make A Big Numbers
+              {title?.[language]}
             </h1>
 
             <NumbersSvg />
 
             <div className="flex relative flex-row z-20  gap-7">
               <div className=" flex flex-col gap-5">
-                <NumbersCard text1="+30" text2="Happy customers" />
-                <NumbersCard text1="+30" text2="Cases study" />
+                <NumbersCard
+                  text1={statistics ? statistics[0].number : ""}
+                  text2={statistics ? statistics[0].title?.[language] : ""}
+                />
+                <NumbersCard
+                  text1={statistics ? statistics[1].number : ""}
+                  text2={statistics ? statistics[1].title?.[language] : ""}
+                />
               </div>
 
               <div className="  flex flex-col gap-5 mt-16">
-                <NumbersCard text1="+100" text2="Projects" />
-                <NumbersCard text1="+50K$" text2="Marketing Spend for a single client in 30 days" />
+                <NumbersCard
+                  text1={statistics ? statistics[2].number : ""}
+                  text2={statistics ? statistics[2].title?.[language] : ""}
+                />
+                <NumbersCard
+                  text1={statistics ? statistics[3].number : ""}
+                  text2={statistics ? statistics[3].title?.[language] : ""}
+                />
               </div>
 
               <svg
-                className={`absolute max-w-36  top-36    xxs:max-w-36     ${language=="en"?"left-[8rem] right-[4rem]  xxs:right-36  xxs:left-auto  xs:left-40 xs:right-36":" left-[4rem] right-[8rem] xxs:right-36  xxs:left-auto  xs:left-36 xs:right-40"}    xs:max-w-44 sm:left-auto sm:right-44  sm:max-w-48  md:max-w-44 md:top-36   ${language=="en"?"md:right-36":"md:right-40"} lg:max-w-52   lg:top-36  lg:right-52 xl:top-36  ${ language=="en"?" ":"rotate-1 -scale-x-100"} xl:right-56  z-20   `}
+                className={`absolute max-w-36  top-36    xxs:max-w-36     ${language == "en" ? "left-[8rem] right-[4rem]  xxs:right-36  xxs:left-auto  xs:left-40 xs:right-36" : " left-[4rem] right-[8rem] xxs:right-36  xxs:left-auto  xs:left-36 xs:right-40"}    xs:max-w-44 sm:left-auto sm:right-44  sm:max-w-48  md:max-w-44 md:top-36   ${language == "en" ? "md:right-36" : "md:right-40"} lg:max-w-52   lg:top-36  lg:right-52 xl:top-36  ${language == "en" ? " " : "rotate-1 -scale-x-100"} xl:right-56  z-20   `}
                 viewBox="0 0 192 214"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

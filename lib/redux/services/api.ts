@@ -4,6 +4,9 @@ import { HomeResponse } from '../../../common/types/home'
 import { AboutUsResponse } from '../../../common/types/about-us'
 import { ServicesResponse } from '../../../common/types/services'
 import { ContactFormData } from '../../../common/types/contact'
+import { SharedResponse } from '../../../common/types/shared'
+import { Evaluation } from '../../../common/types/evaluation'
+import { ProjectResponse, ProjectsResponse } from '../../../common/types/projects'
 
 const Url=BASE_API_URL
 export const Api = createApi({
@@ -19,6 +22,9 @@ export const Api = createApi({
     getServices: builder.query<ServicesResponse, void>({
         query: () => `/admin/services`,
       }),
+      getShared: builder.query<SharedResponse, void>({
+        query: () => `/admin/shared`,
+      }),
 
     sendEmail: builder.mutation<ContactFormData,Partial<ContactFormData>>({
 			query: (formData) => ({
@@ -33,8 +39,19 @@ export const Api = createApi({
 				  },
 			}),
 		}),
+    getEvaluation : builder.query<Evaluation, void>({
+      query: () => `/admin/evaluation`,
+    }),
+
+    getProjects : builder.query<ProjectsResponse, void>({
+      query: () => `/admin/project`,
+    }),
+
+    getProject : builder.query<ProjectResponse, string>({
+      query: (id) => `/admin/project/${id}`,
+    }),
 
   }),
 })
 
-export const { useGetHomeQuery ,useGetAbouUsQuery ,useGetServicesQuery ,useSendEmailMutation } = Api
+export const { useGetHomeQuery ,useGetAbouUsQuery ,useGetServicesQuery ,useSendEmailMutation, useGetSharedQuery,useGetEvaluationQuery ,useGetProjectQuery, useGetProjectsQuery } = Api

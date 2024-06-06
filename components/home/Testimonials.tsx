@@ -3,7 +3,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import TestimonialsCard from "./TestimonialsCard";
 import { Container } from "../global/Container";
-const Testimonials = () => {
+import { useTranslation } from "next-i18next";
+const Testimonials = ({ title, subTitle, testimonials }) => {
+  const { i18n, t } = useTranslation();
+  const language = i18n.language === "en" ? "en" : "ar";
+
   const settings = {
     infinite: true,
     slidesToShow: 2,
@@ -23,23 +27,26 @@ const Testimonials = () => {
       },
     ],
   };
-  const arr = ["1", "2", "3"];
+
   return (
     <div className="bg-[#E9EAFF] py-10">
       <Container>
         <div className="pb-10">
-          <h2 className="text-4xl md:text-6xl font-bold">TESTIMONIALS</h2>
-          <h3 className="text-xl md:text-2xl  pt-3">What our customers said</h3>
+          <h2 className="text-4xl md:text-6xl font-bold">
+            {title?.[language]}
+          </h2>
+          <h3 className="text-xl md:text-2xl  pt-3">{subTitle?.[language]}</h3>
         </div>
       </Container>
       <Slider arrows={false} {...settings}>
-        {arr.map((e, i) => {
+        {testimonials?.map((e, i) => {
           return (
             <TestimonialsCard
               key={i}
-              title1={e}
-              title2="as asd as das"
-              text="Byound Agency has transformed our digital presence. Their creativity and dedication have exceeded our expectations. Working with them has been a pleasure."
+              name={e.name?.[language]}
+              job={e.job?.[language]}
+              description={e.description?.[language]}
+              img={e.img}
             />
           );
         })}

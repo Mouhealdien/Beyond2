@@ -89,6 +89,8 @@ export interface SubTitle {
   // Adjust the ResponseData interface to include the home object
   export interface ResponseData {
     home: Home;
+    statistics:StatisticDetail[];
+    testimonials: Testimonial[];
   }
   
   // Update the ApiResponse type if needed based on the overall structure

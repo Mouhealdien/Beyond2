@@ -1,13 +1,17 @@
-import ImageSection from "../../components/about/imageSection";
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Container } from "../../components/global/Container";
 import Hero from "../../components/global/hero";
 import React from "react";
 import Footer from "../../components/global/Footer";
 import ContactSection from "../../components/global/contact/ContactSection";
-import Navbar from "../../components/global/navbar";
+import parse from "html-react-parser";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useGetAbouUsQuery } from "../../lib/redux/services/api";
+import {
+  useGetAbouUsQuery,
+  useGetEvaluationQuery,
+} from "../../lib/redux/services/api";
 import { useTranslation } from "next-i18next";
+import Loader from "../../components/global/Loader";
 export async function getStaticProps({ locale }) {
   return {
     props: {
@@ -15,7 +19,6 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-
 const index = () => {
   const HeroSvg = (
     <svg
@@ -31,52 +34,24 @@ const index = () => {
       />
     </svg>
   );
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+
   const { i18n, t } = useTranslation();
   const language = i18n.language === "en" ? "en" : "ar";
+  const { data, isLoading } = useGetEvaluationQuery();
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data, error, isLoading } = useGetAbouUsQuery();
-  console.log(data?.data.companyBio);
+  const htmlData = data?.data?.evaluation.htmlContent?.[language].toString();
+  const htmlString = "<div>A simple HTML string</div>";
+  console.log(typeof htmlString);
 
-  const convertToArray = (data, excludeKeys = []) => {
-    return Object.keys(data)
-      .filter((key) => !excludeKeys.includes(key))
-      .filter((key) => {
-        const item = data[key];
-        return item.title && item.paragraph;
-      })
-      .map((key) => ({
-        title: data[key].title,
-        paragraph: data[key].paragraph,
-      }));
-  };
-
-  const AboutUs = data ? convertToArray(data?.data, ["companyBio"]) : [];
-  console.log(AboutUs);
+  if (isLoading) return <Loader />;
   return (
     <div className="bg-primary ">
       <Container customeStyle="bg-primary">
-        <Hero svg={HeroSvg} title={t("about-title")} />
+        <Hero svg={HeroSvg} title={t("evaluation-title")} />
       </Container>
-
-      <ImageSection
-        title={data?.data.companyBio.title?.[language]}
-        paragraph={data?.data.companyBio.paragraph?.[language]}
-      />
-      {AboutUs?.map((e, i) => {
-        return (
-          <div
-            key={i}
-            className={`${i % 2 == 0 ? "bg-[#E9EAFF]" : "bg-white"} px-5 lg:px-[140px] py-10 md:py-36  `}
-          >
-            <h1 className="text-center pb-10 text-2xl md:text-5xl">
-              {e.title?.[language]}
-            </h1>
-            <p className=" text-base md:text-2xl">{e.paragraph?.[language]}</p>
-          </div>
-        );
-      })}
+      <Container customeStyle="bg-white pt-20">
+        <div className="">{htmlData ? parse(htmlData) : ""}</div>
+      </Container>
 
       <ContactSection />
 

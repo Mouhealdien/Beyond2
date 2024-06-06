@@ -8,12 +8,12 @@
     "Follow-us": "تابعنا",
     "side-of-our-works": "بعض من اعمالنا",
     "contact-information": "معلومات التواصل",
-    "Case Studies": "دراسات الحالة",
-    "Strategy Planning": "التخطيط الاستراتيجي",
-    "Social Media": "التواصل الاجتماعي",
-    "Brand Development": " تطوير الماركة",
-    "Content Marketing": "تسويق المحتوى",
-    "Analytics": "تحليلات",
+    "case_studies": "دراسات الحالة",
+    "strategy_planning": "التخطيط الاستراتيجي",
+    "social_media": "التواصل الاجتماعي",
+    "brand_development": " تطوير الماركة",
+    "content_marketing": "تسويق المحتوى",
+    "analytics": "تحليلات",
     "show-full-project": "رؤية المشروع بالكامل",
     "lang": "en",
     "our-clients": "عملائنا",
@@ -47,6 +47,10 @@
     "morning": "صباحاً (من 9 إلى 12)",
     "afternoon": "بعد الظهر (من 12 إلى 3)",
     "evening": "مساءً (من 3 إلى 6)",
-    "requried": "مطلوب"
+    "requried": "مطلوب",
+    "services-title": "ما الخدمات التي نقدمها في بيوند",
+    "about-title": "دعنا نحدثك عن وكالتنا",
+    "works-title": "أعمالنا في بيوند",
+    "evaluation-title": "احصل على خدمة تقييم مجانية"
 
 }

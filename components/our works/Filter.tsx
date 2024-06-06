@@ -1,29 +1,31 @@
-
 import { useTranslation } from "next-i18next";
 import React, { useState } from "react";
 
-const Filter = () => {
-  const [category, setCategory] = useState<string>("Case Studies");
+const Filter = ({ handelCategory }) => {
+  const [category, setCategory] = useState<string>("case_studies");
   const { i18n, t } = useTranslation();
-	const language = i18n.language === 'en' ? 'en' : 'ar';
+  const language = i18n.language === "en" ? "en" : "ar";
 
   const selectCategory = (selectedCategory: any) => {
     setCategory(selectedCategory);
+    handelCategory(selectedCategory);
   };
   const categories = [
-    "Case Studies",
-    "Strategy Planning",
-    "Social Media",
-    "Brand Development",
-    "Content Marketing",
-    "Analytics",
+    "case_studies",
+    "strategy_planning",
+    "social_media",
+    "brand_development",
+    "content_marketing",
+    "analytics",
   ];
   return (
-    <div className={` sticky ${language=="en"?"float-left left-0":"float-right right-0"}    top-0   h-full `}>
+    <div
+      className={` sticky ${language == "en" ? "float-left left-0" : "float-right right-0"}    top-0   h-full `}
+    >
       {categories.map((e) => {
         return (
           <div
-            className=" flex flex-row  items-center text-base sm:text-[18px]"
+            className={`flex flex-row  items-center text-base ${language == "en" ? "sm:text-[20px]" : "sm:text-[22px]"}`}
             key={e}
           >
             {e == category && (
@@ -42,7 +44,7 @@ const Filter = () => {
               </svg>
             )}
             <div
-              className={`${category == e ? "font-bold" : ""} px-1 `}
+              className={`${category == e ? "font-bold" : ""} px-1 py-2 `}
               onClick={() => selectCategory(e)}
             >
               {t(e)}

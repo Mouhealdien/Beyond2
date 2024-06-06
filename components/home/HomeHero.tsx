@@ -6,9 +6,10 @@ import HeroText from "../global/HeroText";
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
-const HomeHero = () => {
+const HomeHero = ({ title, subTitles }) => {
   const { i18n, t } = useTranslation();
-	const language = i18n.language === 'en' ? 'en' : 'ar';
+  const language = i18n.language === "en" ? "en" : "ar";
+
   return (
     <header className="relative h-[800px]   overflow-hidden">
       <Container>
@@ -18,33 +19,34 @@ const HomeHero = () => {
         </div>
 
         <div className="relative">
-          <div className={`border-l-gray-200 absolute top-[450px] md:top-[550px]    border-l ${language=="en"?"right-0":"left-0"} h-20 z-40  `} />
+          <div
+            className={`border-l-gray-200 absolute top-[450px] md:top-[550px]    border-l ${language == "en" ? "right-0" : "left-0"} h-20 z-40  `}
+          />
         </div>
       </Container>
       <SocialMedia customeStyle="top-52  xl:px-[120px]" />
       <div className="   ">
         <div className="flex flex-col    absolute bg-transparent w-full top-[20.5rem] md:top-80 text-center   z-50    ">
           <h1 className="text-xl xs:text-2xl md:text-4xl m-auto w-full md:w-[800px] lg:w-full  px-20 text-white">
-            Unleashing Potential, Creating Impact with
+            {title?.[language]}
           </h1>
-          <HeroText />
+          <HeroText subTitles={subTitles} />
           <div className="top-40 left-0 bottom-0 right-0 m-auto absolute">
-            <Link href={'#contact'}>
-            <button
-              type="button"
-              className="text-white font-bold mx-4 w-[120px] xs:w-[150px] bg-primary hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
-            >
-              {t('contact-us')}
-            </button>
+            <Link href={"#contact"}>
+              <button
+                type="button"
+                className="text-white font-bold mx-4 w-[120px] xs:w-[150px] bg-primary hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
+              >
+                {t("contact-us")}
+              </button>
             </Link>
             <Link href="/about-us">
-            <button
-              type="button"
-              className="text-black font-bold w-[110px] xs:w-[150px] bg-white hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
-            >
-               {t('learn-more')}
-             
-            </button>
+              <button
+                type="button"
+                className="text-black font-bold w-[110px] xs:w-[150px] bg-white hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
+              >
+                {t("learn-more")}
+              </button>
             </Link>
           </div>
         </div>
