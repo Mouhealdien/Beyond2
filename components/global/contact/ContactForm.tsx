@@ -15,6 +15,7 @@ interface OptionType {
 }
 const ContactForm = () => {
   const { i18n, t } = useTranslation();
+  const [addMessage] = useSendEmailMutation();
   const recaptcha = useRef<ReCAPTCHA | null>(null);
   const selectStyle = {
     placeholder: (provided) => ({
@@ -49,20 +50,20 @@ const ContactForm = () => {
     OptionType,
     GroupBase<OptionType>
   > = [
-    { value: "socialMediaManagement", label: t("socialMediaManagement") },
+    { value: "Social_Media_Management", label: t("socialMediaManagement") },
     {
-      value: "marketingStrategyDevelopment",
+      value: "Marketing_Strategy_Development",
       label: t("marketingStrategyDevelopment"),
     },
-    { value: "analyticsAndEvaluation", label: t("analyticsAndEvaluation") },
-    { value: "designAndProduction", label: t("designAndProduction") },
+    { value: "Analytics_Evaluation", label: t("analyticsAndEvaluation") },
+    { value: "Design_Production", label: t("designAndProduction") },
   ];
 
   const hearUsOptions: OptionsOrGroups<OptionType, GroupBase<OptionType>> = [
-    { value: "searchEngines", label: t("searchEngines") },
-    { value: "socialMedia", label: t("socialMedia") },
-    { value: "referrals", label: t("referrals") },
-    { value: "advertising", label: t("advertising") },
+    { value: "SearchEngines", label: t("searchEngines") },
+    { value: "Social_Media", label: t("socialMedia") },
+    { value: "Referrals", label: t("referrals") },
+    { value: "Advertising", label: t("advertising") },
   ];
 
   const timeOptions: OptionsOrGroups<OptionType, GroupBase<OptionType>> = [
@@ -88,23 +89,20 @@ const ContactForm = () => {
   const onSubmit = async (data) => {
     const token = recaptcha.current.getValue();
     if (token) {
-      console.log("Captcha checked");
-      toast.success("we will reply you soon");
-      console.log({
+      const updatedData = {
         ...data,
         requestType: data.requestType.value,
         HowDidYouHearAboutUs: data.HowDidYouHearAboutUs.value,
         bestTime: data.bestTime.value,
+      };
+      await toast.promise(addMessage(updatedData).unwrap(), {
+        error: t("could-not-update"),
+        pending: t("trying-to-update"),
+        success: t("updated-successfully") as string,
       });
     } else {
       toast.error("please check the reCaptcha");
     }
-
-    // await toast.promise(updateService({ formData: data }).unwrap(), {
-    // 	error: t('could-not-update'),
-    // 	pending: t('trying-to-update'),
-    // 	success: t('updated-successfully') as string,
-    // });
   };
 
   return (
