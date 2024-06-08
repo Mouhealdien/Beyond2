@@ -91,14 +91,14 @@ const ContactForm = () => {
     if (token) {
       const updatedData = {
         ...data,
-        requestType: data.requestType.value,
-        HowDidYouHearAboutUs: data.HowDidYouHearAboutUs.value,
-        bestTime: data.bestTime.value,
+        requestType: data?.requestType?.value,
+        HowDidYouHearAboutUs: data?.HowDidYouHearAboutUs?.value,
+        bestTime: data?.bestTime?.value,
       };
       await toast.promise(addMessage(updatedData).unwrap(), {
-        error: t("could-not-update"),
-        pending: t("trying-to-update"),
-        success: t("updated-successfully") as string,
+        error: t("faildsendmail"),
+        pending: t("pendingsendemail"),
+        success: t("sendMailMessage") as string,
       });
     } else {
       toast.error("please check the reCaptcha");

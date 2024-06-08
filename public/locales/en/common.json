@@ -51,7 +51,10 @@
     "services-title": "What Services We Offer at Beyond",
     "about-title": "Let’s tell you about our agency",
     "works-title": "What we did at Beyond",
-    "evaluation-title": "Get Free Evaluation Service"
+    "evaluation-title": "Get Free Evaluation Service",
+    "sendMailMessage": "We will respond within 48 hours from Sunday to Tuesday from 10 a.m. to 5 p.m.",
+    "faildsendmail": "error occurred please try again",
+    "pendingsendemail": "sending...."
 
 
 }

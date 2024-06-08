@@ -1,6 +1,9 @@
 import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import React, { useState } from "react";
+import logo from "../../public/assets/Logo.svg";
+import Image from "next/image";
+import Logo from "./Logo";
 type propsType = {
   backgroundColor?: string;
   customeStyle?: string;
@@ -45,7 +48,7 @@ const Navbar = (props: propsType) => {
           href="/"
           className="flex items-center space-x-3  rtl:space-x-reverse"
         >
-          <h1 className=" text-xl text-white font-extrabold">Beyond.</h1>
+          <Logo customeStyle="w-[120px]" />
         </Link>
         <div className="flex gap-2 lg:order-2  space-x-3 md:space-x-0 rtl:space-x-reverse">
           <Link href={"#contact"}>
