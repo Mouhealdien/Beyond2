@@ -6,6 +6,7 @@ import { FaArrowRight } from "react-icons/fa";
 import useMediaQuery from "../../lib/hooks/hooks/useMediaQuery";
 import { useTranslation } from "next-i18next";
 import { Project } from "../../common/types/projects";
+import { getPhotoUrl } from "../../lib/utils";
 const Projects = ({ projects }) => {
   console.log(projects);
   const arr = [1, 2, 3];
@@ -28,7 +29,7 @@ const Projects = ({ projects }) => {
               <Image
                 style={{ transform: "scale(2.5)" }}
                 className="rounded-t-lg   "
-                src={e.photo}
+                src={getPhotoUrl(e.photo)}
                 height="600px"
                 width="500px"
                 objectFit="contain"

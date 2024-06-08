@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import parse from "html-react-parser";
 import Footer from "../../../components/global/Footer";
+import Loader from "../../../components/global/Loader";
 // export async function getStaticPaths(id:string) {
 //   return {
 //     paths: [
@@ -44,11 +45,12 @@ const page = () => {
   const { i18n, t } = useTranslation();
   const language = i18n.language === "en" ? "en" : "ar";
 
-  const { data } = useGetProjectQuery(id.toString());
+  const { data, isFetching } = useGetProjectQuery(id.toString());
 
   const project = data?.data.project;
 
   const htmlData = project?.content?.[language].toString();
+  if (isFetching) return <Loader />;
   return (
     <div>
       <ProjectHero

@@ -4,6 +4,7 @@ import Navbar from "../global/navbar";
 import Image from "next/image";
 import heroImg from "../../public/assets/projectHero.png";
 import { useTranslation } from "next-i18next";
+import { getPhotoUrl } from "../../lib/utils";
 const ProjectHero = ({ photo, title, category }) => {
   const { i18n, t } = useTranslation();
   const language = i18n.language === "en" ? "en" : "ar";
@@ -37,7 +38,7 @@ const ProjectHero = ({ photo, title, category }) => {
           style={{
             filter: " blur(10px) ",
           }}
-          src={photo}
+          src={getPhotoUrl(photo)}
           layout="fill"
           alt="hero"
         />

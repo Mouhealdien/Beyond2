@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import x from "../../public/assets/aboutImage.png";
 import { useTranslation } from "next-i18next";
+import { getPhotoUrl } from "../../lib/utils";
 type propsType = {
   name: string;
   job: string;
@@ -19,7 +20,7 @@ const TestimonialsCard = ({ name, job, description, img }: propsType) => {
       <div className="w-full flex flex-row mb-4 items-center">
         <div className="overflow-hidden rounded-full min-w-16 min-h-16 w-16 h-16 bg-gray-50 border border-gray-200">
           <Image
-            src={img ? img : ""}
+            src={getPhotoUrl(img)}
             layout="responsive"
             width={40}
             height={40}

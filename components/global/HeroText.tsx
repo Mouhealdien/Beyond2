@@ -9,7 +9,7 @@ const HeroText = ({ subTitles }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % sentences.length);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % sentences?.length);
     }, 3000); // Change sentence every 3 seconds
 
     return () => clearInterval(interval);
