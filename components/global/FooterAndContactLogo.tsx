@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import logo from "../../public/assets/Logo.svg";
 import Logo from "./Logo";
+import Link from "next/link";
 const FooterAndContactLogo = () => {
   return (
     <div className="flex flex-row px-3 items-end gap-1">
@@ -18,14 +19,7 @@ const FooterAndContactLogo = () => {
             fill="#202EFF"
           />
         </svg>
-        {/* <Image
-          className="absolute top-5 left-5"
-          priority
-          src={logo}
-          height={50}
-          width={100}
-          alt="Follow us on Twitter"
-        /> */}
+
         <Logo customeStyle="absolute top-5 left-4 w-24" />
       </div>
 
