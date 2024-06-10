@@ -75,15 +75,17 @@ const Footer = () => {
                 );
               })}
             </ul>
-            <div className="flex-row flex gap-4 items-start">
-              <p className=" text-white text-sm inline  ">{t("Follow-us")}</p>
+            <div className="flex-col flex gap-4 items-start">
+              <p className=" text-white text-[16px] sm:text-lg  inline  ">
+                {t("Follow-us")}
+              </p>
               <SocialLinks customeStyle={"flex-row"} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-row w-full justify-center py-3 px-24 text-white">
+      <div className="flex flex-row w-full text-center text-base justify-center py-3  text-white">
         <p> Designed by Beyond Agency © All rights reserved 2024</p>
       </div>
     </div>

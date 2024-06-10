@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import x from "../../public/assets/aboutImage.png";
 import { useTranslation } from "next-i18next";

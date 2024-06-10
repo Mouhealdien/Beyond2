@@ -25,11 +25,11 @@ const MiddelHeroSection = ({ title }) => {
 
           <div className="pt-[150px]  md:pt-[100px]">
             <QutationSvg customeStyle="text-start xl:px-[40px]  pt-[20px]" />
-            <p className=" inline-block text-center m-auto text-white text-[20px] xs:text-[25px] sm:text-[30px] md:text-[40px]  lg:text-[50px]   ">
+            <p className="  flex justify-center text-center m-auto text-white text-[20px] xs:text-[25px] sm:text-[30px] md:text-[40px]  lg:text-[50px]   ">
               {title?.[language]}
             </p>
             <QutationSvg
-              customeStyle={`  ${language == "en" ? "float-right" : "float-left mt-[0px] xl:mt-[30px]"} `}
+              customeStyle={`   ${language == "en" ? "float-right mt-[15px] sm:mt-[0px]" : "float-left mt-[10px] xl:mt-[30px]"} `}
             />
           </div>
         </div>

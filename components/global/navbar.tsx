@@ -135,7 +135,7 @@ const Navbar = (props: propsType) => {
                 </button>
               </Link>
 
-              <Link href={"#contact"}>
+              <Link href={"/evaluation"}>
                 <button
                   type="button"
                   className="text-black m-auto xxs:block  font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "

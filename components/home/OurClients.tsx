@@ -22,7 +22,7 @@ const OurClients = () => {
       <div className="text-center py-5">
         <h2 className="text-4xl md:text-6xl font-bold">{t("our-clients")}</h2>
       </div>
-      <div className="flex gap-10 py-5 flex-row flex-wrap items-center mb-3 justify-center">
+      <div className="flex  py-5 flex-row flex-wrap items-center mb-3 justify-center">
         {clients.map((e, i) => {
           if (i < 3)
             return (
@@ -37,7 +37,7 @@ const OurClients = () => {
             );
         })}
       </div>
-      <div className="flex gap-10 flex-row flex-wrap pb-20  items-center justify-center">
+      <div className="flex gap-8 flex-row flex-wrap pb-20  items-center justify-center">
         {clients.map((e, i) => {
           if (showMore) {
             if (i > 2)

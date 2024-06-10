@@ -66,9 +66,7 @@ const ContactSection = () => {
 
         <div className="bg-[#F3F3F3]  px-3 py-3 shadow-inner pb-5 h-fit z-20 ">
           <FooterAndContactLogo />
-          <p className={`text-[#5D5E5E]"  py-2 px-5 `}>
-            Feel free to write meassage to us
-          </p>
+          <p className={`text-[#5D5E5E]  py-2 px-5 `}>{t("feel-free")}</p>
           <ContactForm />
           <ContactInfo
             customeStyle={` block  lg:hidden py-5 mt-2 px-2 text-primary pt-5`}

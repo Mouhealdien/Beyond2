@@ -7,15 +7,15 @@ const SocialLinks = ({ customeStyle }) => {
   const sharedData = shared?.data?.shared;
   const social = [
     {
-      icon: <FaFacebook color="white" />,
+      icon: <FaFacebook className=" text-xl sm:text-2xl" color="white" />,
       url: sharedData?.facebookLink ? sharedData?.facebookLink : "",
     },
     {
-      icon: <FaInstagram color="white" />,
+      icon: <FaInstagram className="text-xl sm:text-2xl" color="white" />,
       url: sharedData?.instagramLink ? sharedData?.instagramLink : "",
     },
     {
-      icon: <FaLinkedin color="white" />,
+      icon: <FaLinkedin className="text-xl sm:text-2xl" color="white" />,
       url: sharedData?.linkedinLink ? sharedData?.linkedinLink : "",
     },
   ];

@@ -14,6 +14,12 @@ module.exports = {
                 xs: "500px",
                 ...defaultTheme.screens,
             },
+            fontFamily: {
+                Poppins: ['Poppins', ...defaultTheme.fontFamily.sans],
+                SansSerif: ['SansSerif', ...defaultTheme.fontFamily.sans],
+                GraphikArabic: ['GraphikArabic', ...defaultTheme.fontFamily.sans]
+
+            },
             animation: {
                 loopText: "loopText 2s ease infinite",
                 riseFade: "riseFade 2s ease-in-out forwards",

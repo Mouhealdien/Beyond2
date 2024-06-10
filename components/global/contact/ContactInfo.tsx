@@ -47,7 +47,12 @@ const ContactInfo = ({ customeStyle }: propsType) => {
             >
               {e.icon}
             </div>
-            <p className="text-sm w-72">{e.text}</p>
+            <p
+              dir={i == 1 && language == "ar" ? "ltr" : ""}
+              className={`text-sm ${i == 1 && language == "ar" ? "text-right " : ""}  w-72 `}
+            >
+              {e.text}
+            </p>
           </div>
         );
       })}

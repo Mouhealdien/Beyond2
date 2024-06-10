@@ -16,7 +16,9 @@ const SocialMedia = ({ customeStyle }: propsType) => {
     <div className={`absolute ${customeStyle} z-40`}>
       <div className="flex flex-col items-center gap-10 ">
         <div className="border-l-gray-200  border-l h-36  " />
-        <p className=" text-white rotate-90  ">{t("Follow-us")}</p>
+        <p className=" text-white rotate-90 text-[16px] sm:text-lg  ">
+          {t("Follow-us")}
+        </p>
         <SocialLinks customeStyle={"flex-col"} />
       </div>
     </div>
