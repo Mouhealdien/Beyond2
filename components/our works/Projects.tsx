@@ -37,7 +37,7 @@ const Projects = ({ projects }) => {
               />
             </div>
             <div className="  text-primary ">
-              <h1 className="text-lg  text-black md:text-[18px]  lg:text-[24px]   font-bold">
+              <h1 className="text-lg  text-secondary md:text-[18px]  lg:text-[24px]   font-bold">
                 {e.title?.[language]}
               </h1>
               <Link

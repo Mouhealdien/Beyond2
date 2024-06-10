@@ -18,7 +18,7 @@ const HeroText = ({ subTitles }) => {
   const colorLastWord = (sentence: string) => {
     const words = sentence?.split(" ");
     const lastWord = words[words.length - 1];
-    const coloredLastWord = `<p class="text-blue-600 inline-block">${lastWord}</p>  `;
+    const coloredLastWord = `<p class="text-primary inline-block">${lastWord}</p>  `;
     const modifiedSentence = sentence.replace(lastWord, coloredLastWord);
     return (
       <div

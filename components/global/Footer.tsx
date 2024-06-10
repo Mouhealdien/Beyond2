@@ -31,21 +31,6 @@ const Footer = () => {
     },
   ];
 
-  const social = [
-    {
-      icon: <FaFacebook color="white" />,
-      url: "#",
-    },
-    {
-      icon: <FaInstagram color="white" />,
-      url: "#",
-    },
-    {
-      icon: <FaXTwitter color="white" />,
-      url: "#",
-    },
-  ];
-
   return (
     <div className="bg-[#1B1C1C] h-fit ">
       <div className="flex flex-row flex-wrap ">
@@ -58,15 +43,15 @@ const Footer = () => {
         />
         <div className="flex gap-5 flex-col pt-10 px-2">
           <FotterAndContactLogo />
-          <AchievementCard />
+
           <div className="flex  gap-10 flex-row">
             <ul className=" font-light flex flex-col gap-4 text-sm">
               {pages.map((page, index) => {
                 return (
-                  <li className=" text-white" key={index}>
+                  <li className=" text-white hover:font-bold" key={index}>
                     <Link
                       href={page.url}
-                      className="block  px-3 text-white  md:p-0 "
+                      className="block  px-3 text-white   md:p-0 "
                       aria-current="page"
                     >
                       {page.title}
@@ -80,6 +65,7 @@ const Footer = () => {
                 {t("Follow-us")}
               </p>
               <SocialLinks customeStyle={"flex-row"} />
+              <AchievementCard />
             </div>
           </div>
         </div>

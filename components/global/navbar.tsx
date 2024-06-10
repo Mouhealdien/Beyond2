@@ -54,7 +54,7 @@ const Navbar = (props: propsType) => {
           <Link href={"#contact"}>
             <button
               type="button"
-              className="text-black hidden md:block font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
+              className="text-secondary transition duration-300 hidden md:block font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
             >
               {t("contact-us")}
             </button>
@@ -63,14 +63,14 @@ const Navbar = (props: propsType) => {
           <Link href={"/evaluation"}>
             <button
               type="button"
-              className="text-black hidden md:block font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
+              className="text-secondary hidden md:block transition duration-300 font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
             >
               {t("Get a free evaluation")}
             </button>
           </Link>
           <button
             onClick={handleLanguageChange}
-            className="px-3 py-2 cursor-pointer  text-sm  font-bold  bg-secondary text-white  border-white rounded-lg hover:bg-white hover:text-black transition duration-300 border "
+            className="px-3 py-2 cursor-pointer  text-sm  font-bold  bg-transparent text-white  border-white rounded-lg hover:bg-white hover:text-secondary transition duration-300 border "
           >
             {t("lang")}
           </button>
@@ -129,7 +129,7 @@ const Navbar = (props: propsType) => {
               <Link href={"#contact"}>
                 <button
                   type="button"
-                  className="text-black  m-auto font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
+                  className="text-secondary  transition duration-300 m-auto font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
                 >
                   {t("contact-us")}
                 </button>
@@ -138,7 +138,7 @@ const Navbar = (props: propsType) => {
               <Link href={"/evaluation"}>
                 <button
                   type="button"
-                  className="text-black m-auto xxs:block  font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
+                  className="text-secondary transition duration-300 m-auto xxs:block  font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
                 >
                   {t("Get a free evaluation")}
                 </button>

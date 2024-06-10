@@ -70,10 +70,12 @@ const index = () => {
             key={i}
             className={`${i % 2 == 0 ? "bg-[#E9EAFF]" : "bg-white"} px-5 lg:px-[140px] py-10 md:py-36  `}
           >
-            <h1 className="text-center pb-10 text-2xl md:text-5xl">
+            <h1 className="text-center text-secondary pb-10 text-2xl md:text-5xl">
               {e.title?.[language]}
             </h1>
-            <p className=" text-base md:text-2xl">{e.paragraph?.[language]}</p>
+            <p className=" text-base text-secondary md:text-2xl">
+              {e.paragraph?.[language]}
+            </p>
           </div>
         );
       })}

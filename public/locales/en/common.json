@@ -55,7 +55,8 @@
     "sendMailMessage": "We will respond within 48 hours from Sunday to Tuesday from 10 a.m. to 5 p.m.",
     "faildsendmail": "error occurred please try again",
     "pendingsendemail": "sending....",
-    "feel-free": "Feel free to write message to us"
+    "feel-free": "Feel free to write message to us",
+    "head-title": "Creative agency"
 
 
 }

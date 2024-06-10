@@ -1,17 +1,18 @@
 import { useRouter } from "next/router";
 import useI18n from "../lib/hooks/hooks/use-18n";
 import "../styles/globals.css";
-import { appWithTranslation } from "next-i18next";
+import { appWithTranslation, useTranslation } from "next-i18next";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { store } from "../lib/redux/store";
 import Loader from "../components/global/Loader";
 import { useEffect, useState } from "react";
+import FooterAndContactLogo from "../components/global/FooterAndContactLogo";
 
 function MyApp({ Component, pageProps }) {
   const language = useI18n();
   const { locale } = useRouter();
-
+  const { i18n, t } = useTranslation();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -32,10 +33,11 @@ function MyApp({ Component, pageProps }) {
   return (
     // <html dir={`${locale == 'ar' ? 'rtl' : 'ltr'}`}>
     <Provider store={store}>
+      <Head>
+        <title>{t("head-title")}</title>
+        <link rel="icon" href="/headLogo.png" />
+      </Head>
       <div
-        // style={{
-        //   fontFamily: language === "ar" ? "sans-serif" : "Poppins",
-        // }}
         className={`${language == "en" ? " font-Poppins" : "font-GraphikArabic"}`}
       >
         {loading ? <Loader /> : <Component {...pageProps} />}

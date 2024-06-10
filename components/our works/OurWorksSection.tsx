@@ -33,7 +33,9 @@ const OurWorksSection = ({
     : filteredProjects;
   return (
     <Container customeStyle={customeContainerStyle}>
-      <h1 className={`${customHeaderStyle}`}>{t("side-of-our-works")}</h1>
+      <h1 className={`${customHeaderStyle} text-secondary`}>
+        {t("side-of-our-works")}
+      </h1>
       <div className=" py-8 pt-10 min-h-[400px]">
         <Filter handelCategory={handelCategory} />
         <Projects projects={displayedProjects} />

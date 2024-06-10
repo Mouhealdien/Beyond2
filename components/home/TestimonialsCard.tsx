@@ -36,7 +36,9 @@ const TestimonialsCard = ({ name, job, description, img }: propsType) => {
         </div>
       </div>
       <div className="w-full">
-        <p className=" text-base sm:text-xl leading-tight">{description}</p>
+        <p className=" text-base sm:text-xl text-secondary leading-tight">
+          {description}
+        </p>
       </div>
     </div>
   );

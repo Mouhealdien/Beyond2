@@ -47,7 +47,7 @@ const page = () => {
       </Container>
 
       <Container customeStyle="bg-white">
-        <h1 className="text-3xl md:text-5xl text-[#444545] px-40 py-10">
+        <h1 className="text-3xl md:text-5xl text-secondary px-40 py-10">
           {t("our-services")}
         </h1>
 

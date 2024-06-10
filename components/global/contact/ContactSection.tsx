@@ -34,7 +34,7 @@ const ContactSection = () => {
           >
             <path
               d="M0 0H1156.5L1411.47 252.594V672.345H260.178L1.85536 416.5L0 0Z"
-              fill="#202EFF"
+              fill="#2e3192"
             />
           </svg>
 

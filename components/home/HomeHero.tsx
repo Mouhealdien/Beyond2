@@ -35,7 +35,7 @@ const HomeHero = ({ title, subTitles }) => {
             <Link href={"#contact"}>
               <button
                 type="button"
-                className="text-white font-bold mx-4 w-[120px] xs:w-[150px] bg-primary hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
+                className="text-white transition duration-300 font-bold mx-4 w-[120px] xs:w-[150px] bg-primary hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
               >
                 {t("contact-us")}
               </button>
@@ -43,7 +43,7 @@ const HomeHero = ({ title, subTitles }) => {
             <Link href="/about-us">
               <button
                 type="button"
-                className="text-black font-bold w-[110px] xs:w-[150px] bg-white hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
+                className="text-black transition duration-300 font-bold w-[110px] xs:w-[150px] bg-white hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
               >
                 {t("learn-more")}
               </button>

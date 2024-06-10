@@ -16,7 +16,7 @@ const FooterAndContactLogo = () => {
         >
           <path
             d="M0 0H127.972L166 37.6854V111H38.8046L0.27672 72.8296L0 0Z"
-            fill="#202EFF"
+            fill="#2e3192"
           />
         </svg>
 

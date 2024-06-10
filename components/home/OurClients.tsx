@@ -20,7 +20,9 @@ const OurClients = () => {
   return (
     <Container>
       <div className="text-center py-5">
-        <h2 className="text-4xl md:text-6xl font-bold">{t("our-clients")}</h2>
+        <h2 className="text-4xl md:text-6xl text-secondary font-bold">
+          {t("our-clients")}
+        </h2>
       </div>
       <div className="flex  py-5 flex-row flex-wrap items-center mb-3 justify-center">
         {clients.map((e, i) => {

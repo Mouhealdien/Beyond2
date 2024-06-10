@@ -39,12 +39,12 @@ const Filter = ({ handelCategory }) => {
               >
                 <path
                   d="M9.79248 2.57021e-07L0 9.79248L9.79247 19.585L19.585 9.79247L9.79248 2.57021e-07Z"
-                  fill="#202EFF"
+                  fill="#2e3192"
                 />
               </svg>
             )}
             <div
-              className={`${category == e ? "font-bold" : ""} px-1 py-2 `}
+              className={`${category == e ? "font-bold" : ""} px-1 py-2 text-secondary `}
               onClick={() => selectCategory(e)}
             >
               {t(e)}

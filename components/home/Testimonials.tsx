@@ -41,10 +41,12 @@ const Testimonials = ({ title, subTitle, testimonials }) => {
     <div className="bg-[#E9EAFF] py-10">
       <Container>
         <div className="pb-10">
-          <h2 className="text-4xl md:text-6xl font-bold">
+          <h2 className="text-4xl text-secondary md:text-6xl font-bold">
             {title?.[language]}
           </h2>
-          <h3 className="text-xl md:text-2xl  pt-3">{subTitle?.[language]}</h3>
+          <h3 className="text-xl md:text-2xl text-secondary  pt-3">
+            {subTitle?.[language]}
+          </h3>
         </div>
       </Container>
       <div>
