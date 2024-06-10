@@ -3,36 +3,6 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
 const Loader = () => {
-  // const [isLoading, setLoading] = React.useState(false);
-  // const router = useRouter();
-
-  // React.useEffect(() => {
-  //   let timer;
-
-  //   const start = () => (timer = setTimeout(() => setLoading(true)));
-
-  //   const end = () => {
-  //     if (timer) {
-  //       clearTimeout(timer);
-  //     }
-  //     setLoading(false);
-  //   };
-
-  //   router.events.on("routeChangeStart", start);
-  //   router.events.on("routeChangeComplete", end);
-  //   router.events.on("routeChangeError", end);
-
-  //   return () => {
-  //     router.events.off("routeChangeStart", start);
-  //     router.events.off("routeChangeComplete", end);
-  //     router.events.off("routeChangeError", end);
-
-  //     if (timer) {
-  //       clearTimeout(timer.current);
-  //     }
-  //   };
-  // }, [router.events]);
-
   return (
     <div
       dir="ltr"
