@@ -1,29 +1,23 @@
 import Image from "next/image";
 import React from "react";
-import logo from "../../public/assets/Logo.svg";
-import Logo from "./Logo";
+import Logo from "../../public/assets/FooterAndContactLogo.png";
 import Link from "next/link";
 const FooterAndContactLogo = () => {
   return (
-    <div className="flex flex-row px-3 items-end gap-1">
+    <div className="flex flex-row px-3  items-end gap-2">
       <div className="relative">
-        <svg
-          width="140"
-          height="111"
-          viewBox="0 0 166 111"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 0H127.972L166 37.6854V111H38.8046L0.27672 72.8296L0 0Z"
-            fill="#2e3192"
+        <Link href="/">
+          <Image
+            className="p-0"
+            width={140}
+            height="90"
+            src={Logo}
+            alt="logo"
           />
-        </svg>
-
-        <Logo customeStyle="absolute top-5 left-4 w-24" />
+        </Link>
       </div>
 
-      <p className="text-xs text-primary font-bold">
+      <p className="text-xs text-primary px-0 font-bold">
         {" "}
         Creative <br /> Iraqi <br /> Modern
       </p>

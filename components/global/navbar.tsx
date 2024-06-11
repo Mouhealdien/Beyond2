@@ -48,7 +48,7 @@ const Navbar = (props: propsType) => {
           href="/"
           className="flex items-center space-x-3  rtl:space-x-reverse"
         >
-          <Logo customeStyle="w-[120px]" />
+          <Logo />
         </Link>
         <div className="flex gap-2 lg:order-2  space-x-3 md:space-x-0 rtl:space-x-reverse">
           <Link href={"#contact"}>
