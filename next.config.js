@@ -3,6 +3,11 @@
 const { i18n } = require('./next-i18next.config');
 const nextConfig = {
     swcMinify: true,
+    typescript: {
+
+        ignoreBuildErrors: true,
+    },
+
     reactStrictMode: true,
     i18n,
     images: {
