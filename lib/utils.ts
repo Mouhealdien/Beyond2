@@ -7,5 +7,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getPhotoUrl(p: string) {
-  return BASE_API_URL + p;
+  return p;
 }
