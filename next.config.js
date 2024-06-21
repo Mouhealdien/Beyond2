@@ -22,6 +22,12 @@ const nextConfig = {
                 hostname: 'efac-5-193-21-208.ngrok-free.app',
                 // port: '',
                 // pathname: '/account123/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'beyondbackend-3.onrender.com',
+                // port: '',
+                // pathname: '/account123/**',
             }
         ],
     },
