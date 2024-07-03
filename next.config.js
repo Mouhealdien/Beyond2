@@ -11,7 +11,7 @@ const nextConfig = {
     reactStrictMode: true,
     i18n,
     images: {
-        domains: ['beyondbackend-3.onrender.com'],
+        domains: ['server.beyond4m.com'],
         remotePatterns: [{
                 protocol: 'http',
                 hostname: '127.0.0.1',
@@ -27,6 +27,12 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'beyondbackend-3.onrender.com',
+                // port: '',
+                // pathname: '/account123/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'server.beyond4m.com',
                 // port: '',
                 // pathname: '/account123/**',
             }
