@@ -11,6 +11,7 @@ const nextConfig = {
     reactStrictMode: true,
     i18n,
     images: {
+        domains: ['beyondbackend-3.onrender.com'],
         remotePatterns: [{
                 protocol: 'http',
                 hostname: '127.0.0.1',

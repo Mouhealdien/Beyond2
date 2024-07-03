@@ -54,7 +54,7 @@ const NumbersSection = ({ title, statistics }) => {
               </div>
 
               <svg
-                className={`absolute max-w-36  top-40    xxs:max-w-36     ${language == "en" ? "left-[8rem] right-[4rem]  xxs:right-44  xxs:left-auto xs:left-36  xs:right-40" : " left-[4rem] right-[8rem] xxs:right-36  xxs:left-auto  xs:left-36 xs:right-32"}    xs:max-w-40 sm:left-auto   sm:max-w-44  ${language == "en" ? "sm:right-56" : "sm:right-40"}  md:max-w-40 md:top-48   ${language == "en" ? "md:right-[8.5rem]" : "md:right-40"} lg:max-w-52   lg:top-40  lg:right-52 xl:top-40  ${language == "en" ? " " : "rotate-1 -scale-x-100"} xl:right-56  z-20   `}
+                className={`absolute max-w-36  top-52    xxs:max-w-36     ${language == "en" ? "left-[8rem] right-[4rem]  xxs:right-44  xxs:left-auto xs:left-36  xs:right-40" : " left-[4rem] right-[8rem] xxs:right-36  xxs:left-auto  xs:left-36 xs:right-32"}    xs:max-w-40 sm:left-auto   sm:max-w-44  ${language == "en" ? "sm:right-56" : "sm:right-40"}  md:max-w-40 md:top-48   ${language == "en" ? "md:right-[8.5rem]" : "md:right-40"} lg:max-w-52   lg:top-40  lg:right-52 xl:top-40  ${language == "en" ? " " : "rotate-1 -scale-x-100"} xl:right-56  z-20   `}
                 viewBox="0 0 192 214"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
