@@ -12,7 +12,7 @@ const Testimonials = ({ title, subTitle, testimonials }) => {
   const settings = {
     infinite: true,
     slidesToShow: 2,
-    speed: 2000,
+    speed: 4000,
     autoplay: true,
     autoplaySpeed: 0,
     pauseOnFocus: true,
