@@ -51,7 +51,7 @@ const ContactInfo = ({ customeStyle }: propsType) => {
               dir={i == 1 && language == "ar" ? "ltr" : ""}
               className={`text-sm ${i == 1 && language == "ar" ? "text-right " : ""}  w-72 `}
             >
-              {e.text}
+              {i == 1 ? <a href={`tel:${e.text}`}>{e.text}</a> : e.text}
             </p>
           </div>
         );

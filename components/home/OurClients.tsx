@@ -32,7 +32,7 @@ const OurClients = () => {
                 key={i}
                 className="  max-w-[220px]  lg:max-w-[300px] min-w-[150px] transition duration-1000  grayscale hover:filter-none "
                 src={e}
-                width={300}
+                width={ismobile ? 180 : 300}
                 height={110}
                 alt="logo"
               />
@@ -48,7 +48,7 @@ const OurClients = () => {
                   key={i}
                   className="max-w-[180px] py-2 min-w-[120px] transition duration-1000  grayscale hover:filter-none"
                   src={e}
-                  width={200}
+                  width={ismobile ? 180 : 200}
                   height={120}
                   alt="logo"
                 />
@@ -60,7 +60,7 @@ const OurClients = () => {
                   key={i}
                   className="max-w-[180px] py-2 min-w-[120px] transition duration-1000  grayscale hover:filter-none"
                   src={e}
-                  width={200}
+                  width={ismobile ? 180 : 200}
                   height={120}
                   alt="logo"
                 />

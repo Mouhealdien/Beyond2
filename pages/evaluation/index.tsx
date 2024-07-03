@@ -50,7 +50,7 @@ const index = () => {
         <Hero svg={HeroSvg} title={t("evaluation-title")} />
       </Container>
       <Container customeStyle="bg-white pt-20">
-        <div className="">{htmlData ? parse(htmlData) : ""}</div>
+        <div className="  w-[100%]">{htmlData ? parse(htmlData) : ""}</div>
       </Container>
 
       <ContactSection />
