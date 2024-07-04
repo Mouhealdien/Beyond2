@@ -4,6 +4,32 @@ import "slick-carousel/slick/slick.css";
 import TestimonialsCard from "./TestimonialsCard";
 import { Container } from "../global/Container";
 import { useTranslation } from "next-i18next";
+import { FaArrowCircleLeft, FaArrowCircleRight } from "react-icons/fa";
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} absolute text-primary px-2  top-1/2 transform -translate-y-1/2 cursor-pointer z-20 right-0`}
+      onClick={onClick}
+    >
+      <FaArrowCircleRight style={{ ...style, fontSize: "30px" }} />
+    </div>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} text-primary px-2  absolute top-1/2 transform -translate-y-1/2 cursor-pointer z-20 left-0`}
+      onClick={onClick}
+    >
+      <FaArrowCircleLeft style={{ ...style, fontSize: "30px" }} />
+    </div>
+  );
+}
+
 const Testimonials = ({ title, subTitle, testimonials }) => {
   const { i18n, t } = useTranslation();
   const language = i18n.language === "en" ? "en" : "ar";
@@ -11,18 +37,20 @@ const Testimonials = ({ title, subTitle, testimonials }) => {
 
   const settings = {
     infinite: true,
-    slidesToShow: 2,
-    speed: 4000,
-    autoplay: true,
-    autoplaySpeed: 0,
-    pauseOnFocus: true,
-    cssEase: "linear",
+    slidesToShow: 2.5,
+    //speed: 4000,
+    //autoplay: true,
+    //autoplaySpeed: 0,
+    // nextArrow: <SampleNextArrow />,
+    // prevArrow: <SamplePrevArrow />,
+    //pauseOnFocus: true,
+    //cssEase: "linear",
 
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1.05,
           slidesToScroll: 1,
           infinite: true,
         },
@@ -49,11 +77,12 @@ const Testimonials = ({ title, subTitle, testimonials }) => {
           </h3>
         </div>
       </Container>
-      <div>
+      <div className=" relative overflow-hidden">
         <Slider
           // ref={(slider) => (sliderRef = slider)}
           arrows={false}
           {...settings}
+          className="inline "
         >
           {testimonials?.map((e, i) => {
             return (
