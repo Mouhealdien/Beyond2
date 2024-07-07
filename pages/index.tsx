@@ -26,7 +26,6 @@ export default function Home() {
   const arabic = "ar";
   const English = "en";
   const { data, error, isLoading } = useGetHomeQuery();
-  console.log({ data });
 
   const homeData = data?.data?.home;
   const statistics = data?.data?.statistics;

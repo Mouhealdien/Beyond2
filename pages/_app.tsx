@@ -8,6 +8,7 @@ import { store } from "../lib/redux/store";
 import Loader from "../components/global/Loader";
 import { useEffect, useState } from "react";
 import FooterAndContactLogo from "../components/global/FooterAndContactLogo";
+import GoogleAnalytics from "../components/global/GoogleAnalytics";
 
 function MyApp({ Component, pageProps }) {
   const language = useI18n();
@@ -30,20 +31,20 @@ function MyApp({ Component, pageProps }) {
       router.events.off("routeChangeError", handleComplete);
     };
   }, [router]);
+
   return (
-    // <html dir={`${locale == 'ar' ? 'rtl' : 'ltr'}`}>
     <Provider store={store}>
       <Head>
         <title>{t("head-title")}</title>
         <link rel="icon" href="/headLogo.png" />
       </Head>
+      <GoogleAnalytics />
       <div
         className={`${language == "en" ? " font-Poppins" : "font-GraphikArabic"}`}
       >
         {loading ? <Loader /> : <Component {...pageProps} />}
       </div>
     </Provider>
-    // </html>
   );
 }
 

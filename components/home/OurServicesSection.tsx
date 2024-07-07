@@ -27,7 +27,7 @@ const OurServicesSection = () => {
   const { data } = useGetServicesQuery();
 
   const services = data?.data?.services;
-  console.log(services);
+
   return (
     <Container>
       <div className="flex  gap-8 justify-center items-center  flex-wrap md:flex-nowrap  md:flex-row pt-40 pb-10">

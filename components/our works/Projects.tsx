@@ -8,7 +8,6 @@ import { useTranslation } from "next-i18next";
 import { Project } from "../../common/types/projects";
 import { getPhotoUrl } from "../../lib/utils";
 const Projects = ({ projects }) => {
-  console.log(projects);
   const arr = [1, 2, 3];
   const istab = useMediaQuery("(min-width: 1025px)");
   const { i18n, t } = useTranslation();
