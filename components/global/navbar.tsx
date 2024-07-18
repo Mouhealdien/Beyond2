@@ -51,7 +51,7 @@ const Navbar = (props: propsType) => {
           <Logo />
         </Link>
         <div className="flex gap-2 lg:order-2  space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <Link href={"#contact"}>
+          <Link href={"/contact-us"}>
             <button
               type="button"
               className="text-secondary transition duration-300 hidden md:block font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "
@@ -126,7 +126,7 @@ const Navbar = (props: propsType) => {
               );
             })}
             <div className="  flex-col gap-2 flex md:hidden">
-              <Link href={"#contact"}>
+              <Link href={"/contact-us"}>
                 <button
                   type="button"
                   className="text-secondary  transition duration-300 m-auto font-bold bg-white hover:text-white hover:bg-transparent hover:border-white hover:border focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-4 py-2 text-center  "

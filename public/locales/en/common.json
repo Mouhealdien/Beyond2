@@ -56,7 +56,16 @@
     "faildsendmail": "error occurred please try again",
     "pendingsendemail": "sending....",
     "feel-free": "Feel free to write message to us",
-    "head-title": "Creative agency"
+    "head-title": "Creative agency",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "instagram": "Instagram",
+    "whatsapp": "Whatsapp",
+    "website": "Website",
+    "our-website": "Our Website",
+    "contact-title": "Think beyond limits",
+    "contact-paragraph": "At Beyond, we transcend traditional boundaries to bring you marketing solutions that are grounded in scientific rigor and backed by verifiable data"
+
 
 
 }

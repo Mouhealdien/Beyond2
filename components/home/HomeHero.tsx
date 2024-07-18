@@ -32,7 +32,7 @@ const HomeHero = ({ title, subTitles }) => {
           </h1>
           <HeroText subTitles={subTitles} />
           <div className="top-40 left-0 bottom-0 right-0 m-auto absolute">
-            <Link href={"#contact"}>
+            <Link href={"/contact-us"}>
               <button
                 type="button"
                 className="text-white transition duration-300 font-bold mx-4 w-[120px] xs:w-[150px] bg-primary hover:text-white hover:bg-transparent hover:border-white hover:border rounded-lg text-sm px-4 py-2 text-center  "
