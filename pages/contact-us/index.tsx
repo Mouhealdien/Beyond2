@@ -102,11 +102,22 @@ const index = () => {
           />
         </div>
       </div>
-      <div className="bg-primary relative max-w-[600px] rounded-lg  pb-10 px-5 pt-28">
+      <div
+        style={{
+          clipPath: "polygon(0 0, 87% 0, 100% 9%, 100% 100%, 12% 100%, 0 91%)",
+        }}
+        className="bg-primary relative max-w-[600px] rounded-lg  pb-10 px-5 pt-28"
+      >
         <div className="flex flex-col justify-center  items-center gap-3">
           <h1 className="text-white text-3xl ">{t("contact-title")}</h1>
           <p className="text-white text-center">{t("contact-paragraph")}</p>
-          <div className="bg-white rounded-lg w-full px-5 py-5  ">
+          <div
+            style={{
+              clipPath:
+                "polygon(0 0, 87% 0, 100% 9%, 100% 100%, 12% 100%, 0 88%)",
+            }}
+            className="bg-white rounded-lg w-full px-5 py-5  "
+          >
             {social.map((e, i) => {
               return (
                 <div
