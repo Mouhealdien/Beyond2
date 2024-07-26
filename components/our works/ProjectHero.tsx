@@ -19,7 +19,7 @@ const ProjectHero = ({ photo, title, category }) => {
         </Container>
 
         <div className="   ">
-          <div className="flex flex-col   absolute bg-transparent w-full top-60  xs:top-96 text-center   z-50    ">
+          <div className="flex flex-col   absolute bg-transparent w-full top-96 text-center   z-50    ">
             <h1 className="text-2xl xs:text-2xl md:text-4xl m-auto w-full md:w-[800px] lg:w-full   text-white">
               {title?.[language]}
             </h1>
