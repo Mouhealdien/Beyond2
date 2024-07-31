@@ -36,7 +36,7 @@ const OurWorksSection = ({
       <h1 className={`${customHeaderStyle} text-secondary`}>
         {t("side-of-our-works")}
       </h1>
-      <div className=" py-8 pt-10 min-h-[400px]">
+      <div className=" py-8 pt-10 min-h-[700px]">
         <Filter handelCategory={handelCategory} />
         <Projects projects={displayedProjects} />
       </div>
