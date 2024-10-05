@@ -24,31 +24,35 @@ const Projects = ({ projects }) => {
             style={{ marginTop: `${mt}` }}
             className={`pb-5 sm:pb-1  max-w-[200px] sm:max-w-[300px] md:max-w-[260px] xl:max-w-[300px] h-[300px] sm:h-[450px]`}
           >
-            <div className=" rounded-xl h-[70%] xxs:h-[80%] mb-2  overflow-hidden  ">
-              <Image
-                style={{ transform: "scale(2.5)" }}
-                className="rounded-t-lg   "
-                src={getPhotoUrl(e.photo)}
-                height="600px"
-                width="500px"
-                objectFit="contain"
-                alt=""
-              />
-            </div>
-            <div className="  text-primary ">
-              <h1 className="text-lg  text-secondary md:text-[18px]  lg:text-[24px]   font-bold">
-                {e.title?.[language]}
-              </h1>
-              <Link
-                className="text-primary px-10 text-[10px] md:text-base"
-                href={`our-works/${e._id}`}
-              >
-                {t("show-full-project")}
-              </Link>
-              <FaArrowRight
-                className={` text-[12px] mx-2   inline text-primary ${language == "ar" ? "rotate-180" : ""}`}
-              />
-            </div>
+            <Link
+              className="text-primary px-10 text-[10px] md:text-base"
+              href={`our-works/${e._id}`}
+            >
+              <a>
+                <div className=" rounded-xl h-[70%] xxs:h-[80%] mb-2  overflow-hidden  ">
+                  <Image
+                    style={{ transform: "scale(2.5)" }}
+                    className="rounded-t-lg   "
+                    src={getPhotoUrl(e.photo)}
+                    height="600px"
+                    width="500px"
+                    objectFit="contain"
+                    alt=""
+                  />
+                </div>
+                <div className="  text-primary ">
+                  <h1 className="text-lg  text-secondary md:text-[18px]  lg:text-[24px]   font-bold">
+                    {e.title?.[language]}
+                  </h1>
+
+                  {t("show-full-project")}
+
+                  <FaArrowRight
+                    className={` text-[12px] mx-2   inline text-primary ${language == "ar" ? "rotate-180" : ""}`}
+                  />
+                </div>
+              </a>
+            </Link>
           </div>
         );
       })}
